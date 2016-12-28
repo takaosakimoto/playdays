@@ -1,0 +1,66 @@
+<ion-navbar primary *navbar hideBackButton>
+  <ion-buttons start>
+    <button (click)="handleResetButtonClicked()" tappable>
+      RESET
+    </button>
+  </ion-buttons>
+  <ion-title>FILTER</ion-title>
+  <ion-buttons end>
+    <button (click)="handleDoneButtonClicked()" tappable>
+      DONE
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-content class="directory-filter-page">
+  <center>
+    <button class="district-filter-button" (click)="handleOpenFilterRegionPageModelButtonClicked()" tappable>
+      FILTER BY DISTRICT
+      <img class="district-filter-icon" src="img/filter-icon.svg"/>
+    </button>
+  </center>
+  <div class="district-filters-container">
+    <div class="district-filter-container"
+      *ngFor="let district of selectedDistrictFilters">
+      <span class="district-name">
+        {{district.name}}
+      </span>
+      <button clear small class="" (click)="handleRemoveDistrictFilterButtonClicked(district.id)">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </div>
+  </div>
+
+
+  <h3 class="directory-filter-title">Categories</h3>
+  <p class="directory-filter-subtitle">Choose one or more and then press "Done" on the top right</p>
+  <div class="directory-filters-container">
+    <button
+      *ngFor="let category of availableCategoryFilters"
+      [style.background-color]="filters.category.selected.indexOf(category.id) === -1? 'white' : '#6ED3FF'"
+      (click)="handleCategoryFilterButtonClick(category)"
+      tappable
+      class="directory-filter-btn">
+      <div class="directory-filters-icon" aria-label="Filter Icons" [inlineSVG]="category.image" [cacheSVG] [ngClass]="{selected: filters.category.selected.indexOf(category.id) != -1}"></div>
+      <p [style.color]="filters.category.selected.indexOf(category.id) === -1 ? '#7C95A1' : 'white'">
+        {{category.title}}
+      </p>
+    </button>
+  </div>
+
+
+  <h3 class="directory-filter-title">Tags</h3>
+  <div class="directory-filters-container">
+    <button
+      *ngFor="let tag of availableTagFilters"
+      [style.background-color]="filters.tag.selected.indexOf(tag.id) === -1? 'white' : '#6ED3FF'"
+      (click)="handleTagFilterButtonClick(tag)"
+      tappable
+      class="directory-filter-tag-btn">
+      <span [style.color]="filters.tag.selected.indexOf(tag.id) === -1 ? '#7C95A1' : 'white'">
+        {{tag.title}}
+      </span>
+    </button>
+  </div>
+
+</ion-content>

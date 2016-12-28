@@ -1,0 +1,35 @@
+<ion-toolbar primary>
+  <ion-buttons start>
+    <button (click)="close()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+  </ion-buttons>
+  <ion-title>NEW CHAT</ion-title>
+  <ion-buttons end>
+    <button (click)="goToChatroomNewGroupChatPage()">
+      GroupChat
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-toolbar>
+  <ion-searchbar
+    [placeholder]="'Search'"
+    [debounce]="1000"
+    [hideCancelButton]="shouldHideSearchbarCancelButton"
+    [cancelButtonText]="Cancel"
+    (ionInput)="searchInput$.next($event.target.value)">
+  </ion-searchbar>
+</ion-toolbar>
+
+<ion-content class="">
+  <friend-group-list
+    [friends]="filteredFriends"
+    (onClickFriendItem)="createChatroom($event)">
+  </friend-group-list>
+  <div [hidden]="!showNoSearchResultMessage">
+    <center>
+      No Search Result
+    </center>
+  </div>
+</ion-content>

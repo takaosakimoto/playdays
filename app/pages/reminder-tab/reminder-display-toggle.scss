@@ -1,0 +1,153 @@
+// $dashboard-text-width: 6.9em;
+// $calendar-text-width: 9.62em;
+
+$outer-pad: 0.5em;
+$animation-duration: 500ms;
+
+$inner-pad: $outer-pad * (1 - 0.4);
+
+.toggle-btn-container {
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  text-align: center;
+  padding: 1em 0;
+  background-color: #FFFFFF;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.toggle-btn-toolbar {
+  min-height: 70px;
+}
+
+.toggle-btn-background {
+  background-color: #D3DFE6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 1.3rem;
+  position: relative;
+  padding: 1em 1em;
+  margin: auto;
+  width: auto;
+  // display: inline-block;
+  border-radius: 50em;
+  width: 92%;
+
+  &--directory {
+    background-color: #D3DFE6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    font-size: 1.3rem;
+    position: relative;
+    padding: 1em 1em;
+    margin: auto;
+    width: auto;
+    border-radius: 50em;
+    width: 92%;
+  }
+}
+
+.toggle-btn-background:hover {
+  opacity: 1 !important;
+}
+
+.toggle-btn {
+  position: absolute;
+  z-index: 2;
+  display: inline-block;
+  background-color: map-get($colors, primary);
+  height: 100%;
+  top: 0;
+  border-radius: 50em;
+  transition: left $animation-duration ease, width $animation-duration ease, right $animation-duration ease;
+
+  &--directory {
+    position: absolute;
+    z-index: 2;
+    display: inline-block;
+    background-color: map-get($colors, primary);
+    height: 100%;
+    top: 0;
+    border-radius: 50em;
+    transition: left $animation-duration ease, width $animation-duration ease, right $animation-duration ease;
+
+    &.showing-information {
+      right: 50%;
+      left: 0px;
+    }
+    &.showing-comments {
+      left: 50%;
+      right: 0px;
+    }
+    &.showing-events {
+      right: 50%;
+      left: 0px;
+    }
+    &.showing-directories {
+      left: 50%;
+      right: 0px;
+    }
+  }
+
+  &.showing-information {
+    right: 63%;
+    left: 0px;
+  }
+  &.showing-booking {
+    right: 34%;
+    left: 38%;
+  }
+  &.showing-comments {
+    left: 68%;
+    right: 0px;
+  }
+}
+
+// .toggle-btn.dashboard-active {
+//   min-width: $dashboard-text-width + $pad-diff;
+//   left: 0;
+//   right: $calendar-text-width;
+// }
+//
+// .toggle-btn.calendar-active {
+//   min-width: $calendar-text-width;
+//   left: $dashboard-text-width;
+//   right: 0;
+// }
+
+.toggle-btn-text {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  color: #AEC3CE;
+  transition: color $animation-duration ease;
+}
+
+.dashboard-toggle-btn-text {
+  &--directory {
+    @extend .toggle-btn-text;
+    padding: 0 $inner-pad 0 $outer-pad;
+    // margin:0 5rem 0 0;
+  }
+  @extend .toggle-btn-text;
+  padding: 0 $inner-pad 0 $outer-pad;
+  // margin: 0 1rem 0 1rem;
+}
+
+.calendar-toggle-btn-text {
+  &--directory {
+    @extend .toggle-btn-text;
+    padding: 0 $inner-pad 0 $outer-pad;
+    // margin:0 0 0 5rem;
+  }
+  @extend .toggle-btn-text;
+  padding: 0 $outer-pad 0 $inner-pad;
+  // margin:0 1.5rem 0 1.5rem;
+}
+
+.active-toggle-btn-text {
+  color: #FFFFFF;
+}

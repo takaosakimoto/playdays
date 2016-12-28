@@ -1,0 +1,137 @@
+<ion-navbar primary *navbar class="signup-page-navbar" [hideBackButton]="true">
+  <ion-buttons>
+    <button (click)="goBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+  </ion-buttons>
+  <ion-title>UPDATE PROFILE</ion-title>
+</ion-navbar>
+
+<ion-content class="signup-page">
+
+  <form id="signup-form" [ngFormModel]="signupForm" novalidate>
+    <section>
+      <!-- <div class="round-fb-user-picture">
+        <img [hidden]="!fbUserPictureUrl" [src]="fbUserPictureUrl"/>
+      </div> -->
+    </section>
+    <ion-list no-lines>
+      <!-- <ion-list-header class="profile-header">
+        Required Details
+      </ion-list-header> -->
+      <ion-item>
+        <ion-label>
+          <img class="profile-inputs-icons" src="img/profile_name_icon.svg"/>
+          <!-- <ion-icon name="ios-contact-outline"></ion-icon> -->
+        </ion-label>
+        <ion-input block [ngFormControl]="fnameInput" type="text" placeholder="First Name" required></ion-input>
+        <p danger padding-left [hidden]="!fnameInput.touched || !fnameInput.errors"></p>
+        <ion-input block [ngFormControl]="lnameInput" type="text" placeholder="Last Name" required></ion-input>
+        <p danger padding-left [hidden]="!lnameInput.touched || !lnameInput.errors"></p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <img class="profile-inputs-icons" src="img/profile_email_icon.svg"/>
+          <!-- <ion-icon name="mail"></ion-icon> -->
+        </ion-label>
+        <ion-input block [ngFormControl]="emailInput" type="text" placeholder="email" required>
+        </ion-input>
+        <p danger padding-left [hidden]="!emailInput.touched || !emailInput.errors"></p>
+      </ion-item>
+
+
+      <!-- <ion-list-header class="profile-header">
+        About Me
+      </ion-list-header> -->
+      <ion-item>
+        <!-- <ion-label>
+          <ion-icon name="pin"></ion-icon>
+        </ion-label> -->
+        <ion-textarea [ngFormControl]="aboutMeInput" type="text" placeholder="About Me"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <img class="profile-inputs-icons" src="img/profile_language_icon.svg"/>
+          <!-- <ion-icon name="globe"></ion-icon> -->
+        </ion-label>
+        <ion-select [ngFormControl]="languagesInput" multiple="true" class="languages-input">
+          <ion-option value="cantonese">Cantonese</ion-option>
+          <ion-option value="english">English</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label>
+          <img class="profile-inputs-icons" src="img/profile_mobile_icon.svg"/>
+          <!-- <ion-icon name="ios-phone-portrait-outline"></ion-icon> -->
+        </ion-label>
+        <ion-input block [ngFormControl]="mobileNumberInput" type="tel" placeholder="Mobile Number">
+        </ion-input>
+        <p danger padding-left [hidden]="!mobileNumberInput.touched || !mobileNumberInput.errors"></p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <img class="profile-inputs-icons" src="img/profile_location_icon.svg"/>
+          <!-- <ion-icon name="pin"></ion-icon> -->
+        </ion-label>
+        <ion-select [ngFormControl]="regionIdInput" (change)="handleRegionIdInputChange($event)" class="location-input">
+          <ion-option *ngFor="let region of regions" [value]="region.id">{{region.name}}</ion-option>
+        </ion-select>
+        <ion-select [ngFormControl]="districtIdInput" (change)="handleDistrictIdInputChange($event)" class="location-input">
+          <ion-option *ngFor="let district of displayDistricts" [value]="district.id">{{district.name}}</ion-option>
+        </ion-select>
+
+      </ion-item>
+
+      <ion-list-header class="profile-header">
+        Children
+      </ion-list-header>
+
+      <section class="children">
+        <ion-card *ngFor="let child of childrenInput; let i = index">
+          <ion-card-header>
+            <ion-item class="profile-child-birthday-card">
+              <ion-badge class="profile-child-birthday-card-badge" item-left primary>{{i + 1}}</ion-badge>
+              <p>Little One's Birthday</p>
+               <button item-right clear (click)="removeChildInput(i)">
+                <ion-icon name="ios-trash-outline"></ion-icon>
+              </button>
+
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="profile-child-birthday-date">
+              <ion-label>
+                Month
+              </ion-label>
+              <ion-label>
+                Year
+              </ion-label>
+            </div>
+            <input type="month" [(ngModel)]="child.birthday"/>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-row>
+          <button class="add-new-child-button" type="button" round small primary (click)="addNewChildInput()">
+          ADD SIBLING
+          </button>
+        </ion-row>
+
+      </section>
+
+    </ion-list>
+
+    <ion-row>
+      <ion-col offset-10 width-80>
+        <button class="submit-profile-button" type="submit" round full secondary [disabled]="!signupForm.valid || isLoading">
+          UPDATE
+        </button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

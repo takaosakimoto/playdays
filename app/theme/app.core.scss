@@ -1,0 +1,103 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Shared Imports
+// --------------------------------------------------
+// These are the imports which make up the design of this app.
+// By default each design mode includes these shared imports.
+// App Shared Sass variables belong in app.variables.scss.
+
+@import "../components/index";
+
+@import "../pages/about-us/about-us";
+@import "../pages/add-friend/search-index";
+@import "../pages/add-friend/new";
+@import "../pages/add-friend/show";
+@import "../pages/authentication/authentication";
+@import "../pages/chatroom/index";
+@import "../pages/chatroom/show";
+@import "../pages/coming-soon/index";
+@import "../pages/comment/new";
+@import "../pages/directory/index";
+@import "../pages/directory/index/filter";
+@import "../pages/directory/index/filter-region";
+@import "../pages/directory/homepage/index";
+@import "../pages/directory/show";
+@import "../pages/discovery-tab/index";
+@import "../pages/joined-trial-class/index";
+@import "../pages/feedback/index";
+@import "../pages/friend/show";
+@import "../pages/friends-tab/index";
+@import "../pages/my-likes-tab/index";
+@import "../pages/profile-tab/index";
+@import "../pages/profile-tab/edit";
+@import "../pages/private-event/index";
+@import "../pages/private-event/new";
+@import "../pages/private-event/invite";
+@import "../pages/public-event/index";
+@import "../pages/public-event/show";
+@import "../pages/public-event/homepage/index";
+@import "../pages/reminder-tab/dashboard-reminder";
+@import "../pages/reminder-tab/reminder-display-toggle";
+@import "../pages/settings/index";
+@import "../pages/signup/signup";
+@import "../pages/splash/splash";
+@import "../pages/tabs/tabs";
+@import "../pages/terms-and-conditions/terms-and-conditions";
+@import "../pages/tutorial/tutorial";
+
+// @font-face {
+//   font-family: 'Round-Bold';
+//   src: url('../../fonts/AppleTsukuARdGothic-Bold-AlphaNum.otf') format('opentype');
+// }
+
+@font-face {
+  font-family: 'Round-Bold';
+  src: url('../../fonts/Typo_Round_Bold_Demo.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Round-Light';
+  src: url('../../fonts/Typo_Round_Light_Demo.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Round-Regular';
+  src: url('../../fonts/AppleTsukuARdGothic-Bold-AlphaNum.otf') format('opentype');
+}
+
+
+
+
+
+
+
+
+
+// App Shared Styles
+// --------------------------------------------------
+html, body {
+  font-family: "Open Sans", sans-serif;
+}
+
+
+.toolbar-content {
+  display: flex;
+}
+
+.toobar-title {
+  color: white;
+  order: 5;
+}
+
+.equal-width-icon {
+  width: 1em;
+  text-align: center;
+}
+
+.divider {
+  display: inline-block;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.2);
+}

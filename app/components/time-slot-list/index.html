@@ -1,0 +1,67 @@
+<week-view-calendar [(ngModel)]="selectedDate"></week-view-calendar>
+
+<ion-list>
+  <ion-card
+    class="time-slot-card"
+    *ngFor="let timeSlot of timeSlotsGroup[selectedDate.getTime()]">
+    <div class="time-slot-footer">
+      <ion-label class="time-slot-list-name">
+        <span>{{timeSlotAble[timeSlot.timeSlotAbleIndex].name}}</span>
+        <div class="time-slot-list-tags">
+          <span *ngFor="let eventTag of timeSlotAble[timeSlot.timeSlotAbleIndex].eventTags" class="event-tag event-tag-{{eventTag.id % 10}}">{{ eventTag.title }}</span>
+        </div>
+      </ion-label>
+      <!-- <div class="time-slot-list-like-container">
+        <ion-icon name="heart" class="icon-number-of-like"></ion-icon>
+        <span class="number-of-like">24</span>
+      </div> -->
+      <!-- <div
+        *ngIf="timeSlotAble[timeSlot.timeSlotAbleIndex].joinedConsumerNumber !== undefined"
+        class="time-slot-list-joined-container">
+        <ion-icon name="people" class="icon-number-of-joinned"></ion-icon>
+        <span class="number-of-joined">{{ timeSlotAble[timeSlot.timeSlotAbleIndex].joinedConsumerNumber }}</span>
+      </div> -->
+
+      <!-- <button
+        clear
+        class="time-slot-list-play-btn"
+        protected
+        (protectedOnClick)="emitButtonOnClick(timeSlotAble[timeSlot.timeSlotAbleIndex], timeSlot.id)"
+      >
+        GO
+      </button> -->
+    </div>
+    <div class="time-slot-list-divider"></div>
+    <div
+      class="time-slot-main"
+      tappable
+      (click)="emitCardOnClick(timeSlotAble[timeSlot.timeSlotAbleIndex], timeSlot.id)">
+      <div
+        class="time-slot-thumb"
+        [style.background-image]="'url(' + timeSlotAble[timeSlot.timeSlotAbleIndex].image + ')'">
+        <!-- <div>
+          <span *ngFor="let eventTag of timeSlotAble[timeSlot.timeSlotAbleIndex].eventTags" class="event-tag event-tag-{{eventTag.id % 10}}">{{ eventTag.title }}</span>
+        </div> -->
+        <div class="time-slot-list-info">
+          <!-- <ion-label class="time-slot-list-name">
+            <span>{{timeSlotAble[timeSlot.timeSlotAbleIndex].name}}</span>
+          </ion-label> -->
+
+          <!-- <ion-label class="time-slot-list-info-item">
+            <ion-icon name="calendar" class="time-slot-icon calendar"></ion-icon>
+            {{ dateFormat(timeSlot.date) }}
+          </ion-label> -->
+          <ion-label class="time-slot-list-info-item time">
+            <ion-icon name="time" class="time-slot-icon time"></ion-icon>
+            {{ timeFormat(timeSlot.from, timeSlot.to) }}
+          </ion-label>
+          <ion-label class="time-slot-list-info-item">
+            <ion-icon name="pin" class="time-slot-icon pin" ></ion-icon>
+            {{ plainAddress(timeSlotAble[timeSlot.timeSlotAbleIndex].locationAddress) }}
+          </ion-label>
+        </div>
+        <div class="time-slot-list-info-overlay"></div>
+      </div>
+    </div>
+  </ion-card>
+</ion-list>

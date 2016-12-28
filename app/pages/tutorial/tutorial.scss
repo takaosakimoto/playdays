@@ -1,0 +1,67 @@
+ion-content#tutorial-page {
+  background-color: white;
+
+  scroll-content {
+    padding-top: 0px;
+    ion-slide {
+      div {
+        height: 100%;
+        section:first-child {
+          height: 18%;
+          background-color: #6ED3FF;
+          min-height: 100px;
+          position: relative;
+          h3 {
+            font-family: "Comfortaa", "Varela Round", sans-serif;
+            color: white;
+            font-size: 6vw;
+            width: 100%;
+            position: absolute;
+            bottom: 35px;
+          }
+        }
+
+        section:nth-child(2) {
+          height: 55%;
+          div.background-image {
+            width: 100%;
+            background-size: 70%;
+            background-repeat: no-repeat;
+            background-position-x: 50%;
+            background-position-y: 50%;
+          }
+        }
+
+        section:nth-child(3) {
+          min-height: 12%;
+          position: relative;
+          button {
+            height: 3em;
+            width: 80%;
+            position: absolute;
+            left: 10%;
+          }
+        }
+
+      }
+    }
+    .swiper-pagination-bullet-active {
+    background: color($colors, primary)
+    }
+  }
+
+}
+
+.onboarding-text {
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  text-align: center;
+  color: #6ED3FF;
+  font-size: 0.9em;
+  margin: 0.7em 2em;
+}
+
+.onboarding-get-started-btn {
+  bottom: 25px;
+  width: 60%;
+  background-color: #7ED322;
+}

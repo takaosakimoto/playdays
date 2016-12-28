@@ -1,0 +1,27 @@
+.nav-item-group-btn {
+  background-size: cover;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  margin: 2rem 0;
+}
+
+.nav-item-group-btn-title {
+  color: #FFFFFF;
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px black;
+  margin-bottom: 1rem;
+}
+
+.nav-item-group-btn-subtitle {
+  display: block;
+  color: #FFFFFF;
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.hairlines ion-list .item .item-inner {
+  border-width: 0;
+}

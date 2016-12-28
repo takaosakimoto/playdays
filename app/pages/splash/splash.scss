@@ -1,0 +1,20 @@
+ion-content.splash-page {
+  
+  background-color: color($colors, primary);
+  
+  div {
+    position:relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    height: 100%;
+    img {
+      position:absolute;
+      top:0;
+      bottom:0;
+      margin:auto;
+      min-height:50px
+    }
+  }
+
+}

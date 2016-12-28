@@ -1,0 +1,4 @@
+{
+"apiBaseUrl": "http://api.playdays.co/api/v1/consumer",
+"websocketUrl": "ws://api.playdays.co/socket"
+}

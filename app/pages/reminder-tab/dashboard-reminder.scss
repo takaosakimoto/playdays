@@ -1,0 +1,98 @@
+$card-block-bg-color: #FFF;
+
+.reminder-dashboard-card-item {
+  margin: 0 0.7em 0 0;
+}
+
+.archived-reminder-dashboard-card-item {
+  height: 0;
+  overflow: hidden;
+}
+
+.reminder-dashboard-card {
+  width: 90%;
+  margin: 0.5em 0em 0em auto;
+  // padding: 1em 0 1em 0;
+
+  // -webkit-box-shadow: 0px 25px 61px -10px rgba(128,127,130,1);
+  // -moz-box-shadow: 0px 25px 61px -10px rgba(128,127,130,1);
+  // box-shadow: 0px 25px 61px -10px rgba(128,127,130,1);
+}
+
+.reminder-dashboard-card-block {
+  background-color: $card-block-bg-color;
+  // background-color: rgba(125, 170, 221, 0.84);
+  padding: 1.5em 0 1.5em 0;
+  position: relative;
+}
+
+.reminder-dashboard-card-block.read {
+  background-color: white;
+  // background-color: rgba(128, 236, 248, 0.48);
+  // asdffa
+  // background-color: rgba(211, 227, 236, 0.44);
+}
+
+.reminder-dashboard-card-block.archived {
+  background-color: #D4D4D4;
+  color: #333230;
+}
+
+.reminder-dashboard-card-opaque {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+
+  border-right: 1em solid $card-block-bg-color;
+  border-bottom: 1em solid $card-block-bg-color;
+  border-left: 1em solid #60E3D4;
+  border-top: 1em solid #60E3D4;
+}
+
+.reminder-dashboard-card-time {
+  text-align: right;
+  margin: 0.4em 0 1em 0;
+}
+
+.reminder-dashboard-card-close-icon {
+  padding: 0 !important;
+}
+
+.card-text {
+  padding: 0 1em 0 3em;
+  width: 90%;
+  display: inline-block;
+  vertical-align: middle;
+  color: inherit;
+}
+
+.dashboard-card-icon {
+  position: absolute;
+  top: .5rem;
+  vertical-align: middle;
+  color: #96A6B5;
+  height: 1em;
+}
+
+.dashboard-view-btn {
+  position: absolute;
+  top: 5.5rem;
+  background-color: #7ED321;
+  color: #FFFFFF;
+  right: 1.5rem;
+  border-radius: 25px;
+  font-size: 1.2rem;
+}
+
+.reminder-dashboard-card-img {
+  max-width: 5rem;
+  max-height: 5rem;
+  width: 5rem;
+  border-radius: 3rem;
+}
+
+.reminder-dashboard-card-avatar {
+  position: absolute;
+  margin-left: -2rem !important;
+  margin-top: -0.1rem !important;
+}

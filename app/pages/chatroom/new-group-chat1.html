@@ -1,0 +1,17 @@
+<ion-navbar primary *navbar>
+  <ion-title>NEW GROUP CHAT</ion-title>
+  <ion-buttons end>
+    <button (click)="goToChatroomNewGroupChatPage2()" [disabled]="name === ''"
+      [style.color]="name === '' ? 'gray' : 'white'">
+      Next
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-content class="">
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="name" placeholder="Group Name"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

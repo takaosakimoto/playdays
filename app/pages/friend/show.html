@@ -1,0 +1,67 @@
+<ion-navbar primary *navbar>
+  <ion-title>USER PROFILE</ion-title>
+  <ion-buttons end>
+    <button (click)="createChatroom()">
+      Chat
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+
+<ion-content class="friend-show-page">
+  <ion-item-group>
+    <ion-item detail-none>
+      <ion-row class="friend-show-page-header-row">
+        <ion-col width-20>
+          <ion-avatar item-left>
+            <img [src]="friend.fbUserPictureUrl" class="friend-show-page-img"/>
+          </ion-avatar>
+        </ion-col>
+        <ion-col offset-10 width-70 >
+          <div class="friend-show-page-name">{{ friend.name }}</div>
+        </ion-col>
+      </ion-row>
+
+
+    </ion-item>
+
+  </ion-item-group>
+  <ion-item-divider></ion-item-divider>
+  <ion-item-group>
+
+    <ion-item detail-none n>
+      <ion-row>
+        <ion-col width-20>
+          Region
+        </ion-col>
+        <ion-col offset-10 width-70>
+          {{friend.district.name}},  {{friend.region.name}}
+        </ion-col>
+      </ion-row>
+
+    </ion-item>
+    <ion-item detail-none>
+      <ion-row>
+        <ion-col width-20>
+          Children
+        </ion-col>
+        <ion-col offset-10 width-70>
+          <div *ngFor="let child of friend.children">
+            {{child.birthday}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item detail-none>
+      <ion-row>
+        <ion-col width-20>
+            What’s <br>in mind
+        </ion-col>
+        <ion-col offset-10 width-70>
+          {{friend.aboutMe}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-item-group>
+
+</ion-content>

@@ -1,0 +1,122 @@
+.directory-homepage {
+  background-color: #D3DFE6;
+  &__section {
+    background-color: #FFFFFF;
+    padding-top: 3rem;
+  }
+  &__title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    & svg {
+      text-shadow: 1px 1px 2px black;
+    }
+  }
+  &__category-icon {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+  &__place-image {
+    max-height: 200px !important;
+    min-height: 200px !important;
+    display: block;
+    width: 100% !important;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+  &__slider {
+    height: 50% !important;
+
+    &.swiper-slide.swiper-slide-active {
+      transition: 0.5s all linear;
+      width: 80% !important;
+      margin: 0 1rem;
+      &:first-child {
+        margin-left: 9%;
+      }
+    }
+    &.swiper-slide.swiper-slide-prev {
+      transition: 0.5s all linear;
+      width: 108% !important;
+      transform: scaleY(0.8);
+      filter: opacity(0.5);
+      pointer-events: none;
+    }
+    &.swiper-slide.swiper-slide-next {
+      transition: 0.5s all linear;
+      width: 110% !important;
+      transform: scaleY(0.8);
+      filter: opacity(0.5);
+      pointer-events: none;
+    }
+  }
+  &__slider-container {
+    height: 40%;
+
+    div.swiper-container.swiper-container-horizontal {
+      position: relative !important;
+      height: auto !important;
+
+      &.swiper-pagination {
+        bottom: 0 !important;
+      }
+    }
+  }
+  &__titles {
+    font-family: "Comfortaa";
+    text-align: center;
+    color: #96A6B5;
+    font-size: 1.5rem;
+    margin-top: 1.2rem;
+  }
+  &__place-details-container {
+    position: relative;
+    height: 250px;
+  }
+  &__place-tags-name-container {
+    position: absolute;
+    bottom: 15%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  &__place-name {
+    font-size: 1.5rem;
+    text-align: left;
+    color: #FFFFFF;
+    margin-bottom: .5rem;
+    font-family: "Comfortaa", sans-serif;
+    text-shadow: 1px 1px 2px black;
+    font-weight: 700;
+  }
+  &__place-tags-container {
+    font-family: "Comfortaa";
+    font-size: 1rem;
+    color: #FFF;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    height: 45px;
+  }
+  &__place-tags {
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+  }
+}
+
+span.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: map-get($colors, primary);
+  width: 8px;
+  height: 8px;
+}

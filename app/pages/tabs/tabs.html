@@ -1,0 +1,38 @@
+<ion-tabs [selectedIndex]="selectedIndex" [preloadTabs]="true" id="tabs">
+  <ion-tab
+    [root]="publicEventTabRoot"
+    (ionSelect)="selectEventsHomePageTab($event)"
+    tabTitle="EVENTS"
+    tabIcon="customEventsIcon">
+  </ion-tab>
+  <ion-tab
+    [root]="directoryTabRoot"
+    (ionSelect)="selectDirectoryHomePageTab($event)"
+    tabTitle="DIRECTORY"
+    tabIcon="customDirectoryIcon">
+  </ion-tab>
+  <ion-tab
+    [root]="myLikesTabRoot"
+    tabTitle="FAVORITES"
+    tabIcon="customLikesIcon">
+  </ion-tab>
+  <!-- <ion-tab
+    [root]="friendsTabRoot"
+    (ionSelect)="selectFriendsTab()"
+    tabTitle="FRIENDS"
+    tabIcon="customFriendsIcon"
+    tabBadge="{{friendsTabBadge}}"
+    tabBadgeStyle="danger">
+  </ion-tab> -->
+  <ion-tab
+    [root]="meTabRoot"
+    (ionSelect)="selectProfileTab($event)"
+    tabTitle="ME"
+    tabIcon="customMeIcon">
+  </ion-tab>
+  <!-- <ion-tab
+    [root]="meTabRoot"
+    tabTitle="ME"
+    tabIcon="customMeIcon">
+  </ion-tab> -->
+</ion-tabs>

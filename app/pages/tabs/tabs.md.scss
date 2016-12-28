@@ -1,0 +1,100 @@
+$tabbar-height: 6.3rem;
+
+ion-page.show-page.tab-subpage {
+  height: calc(100% - #{$tabbar-height} + 2px);
+}
+
+ion-tabbar-section {
+  // max-height: $tabbar-height;
+  height: 60px;
+}
+
+ion-tabbar-section {
+  background-color: #FFFFFF;
+  z-index: 999;
+  font-size: 8px;
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+}
+
+.tab-button {
+  padding: 5px 10px 5px 10px;
+}
+
+.tab-button[aria-selected=true] {
+
+  .ion-ios-customEventsIcon,
+  .ion-ios-customEventsIcon-outline,
+  .ion-md-customEventsIcon {
+    // content: url(../../img/tab_events_icon_selected.svg);
+    // padding: 4px 4px 2px;
+    height: 35px;
+  }
+
+  .ion-ios-customDirectoryIcon,
+  .ion-ios-customDirectoryIcon-outline,
+  .ion-md-customDirectoryIcon {
+    // content: url(../../img/tab_directory_selected.svg);
+    // padding: 6px 4px 2px;
+    height: 35px;
+  }
+  .ion-ios-customFriendsIcon,
+  .ion-ios-customFriendsIcon-outline,
+  .ion-md-customFriendsIcon {
+    // content: url(../../img/tab_friends_icon_selected.svg);
+    // padding: 6px 4px 2px;
+    height: 35px;
+  }
+  .ion-ios-customMeIcon,
+  .ion-ios-customMeIcon-outline,
+  .ion-md-customMeIcon {
+    // content: url(../../img/tab_me_icon_selected.svg);
+    // padding: 6px 4px 2px;
+    height: 35px;
+  }
+}
+
+.ion-ios-customEventsIcon,
+.ion-ios-customEventsIcon-outline,
+.ion-md-customEventsIcon {
+  // content: url(../../img/tab_events_icon.svg);
+  // padding: 4px 4px 2px;
+  height: 35px;
+}
+
+.ion-ios-customDirectoryIcon,
+.ion-ios-customDirectoryIcon-outline,
+.ion-md-customDirectoryIcon {
+  // content: url(../../img/tab_directory_icon.svg);
+  // padding: 6px 4px 2px;
+  height: 35px;
+}
+Likes
+.ion-ios-customDirectoryIcon,
+.ion-ios-customDirectoryIcon-outline,
+.ion-md-customLikesIcon {
+  // content: url(../../img/tab_directory_icon.svg);
+  // padding: 6px 4px 2px;
+  height: 35px;
+}
+
+.ion-ios-customFriendsIcon,
+.ion-ios-customFriendsIcon-outline,
+.ion-md-customFriendsIcon {
+  // content: url(../../img/tab_friends_icon.svg);
+  // padding: 6px 4px 2px;
+  height: 35px;
+}
+
+.ion-ios-customMeIcon,
+.ion-ios-customMeIcon-outline,
+.ion-md-customMeIcon {
+  // content: url(../../img/tab_me_icon.svg);
+  // padding: 6px 4px 2px;
+  height: 35px;
+}
+
+
+.tab-button-text {
+  font-size: 8px;
+  margin-top: 5px;
+}

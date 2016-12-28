@@ -1,0 +1,46 @@
+ion-navbar.authentication-page-navbar {
+
+  div.toolbar-background {
+    background-color: #6ED3FF;
+  }
+
+  ion-icon {
+    color: white;
+  }
+
+}
+
+ion-content.authentication-page {
+  background-color: white;
+
+  section:first-child{
+    height: 50%;
+    width: 90%;
+    margin: auto;
+
+    img {
+      margin-top: 25%;
+    }
+  }
+
+  section {
+    ion-col {
+      button {
+        text-transform: none;
+        height: 3.5em;
+        font-size: 1.6rem;
+
+        span.button-inner {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+
+      center {
+        color: gray
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,49 @@
+<ion-navbar primary *navbar>
+  <ion-title>EVENTS</ion-title>
+  <!-- <ion-buttons end>
+    <button (click)="handleListByDayButtonClicked()">
+      <ion-icon name="md-calendar"></ion-icon>
+    </button>
+  </ion-buttons> -->
+</ion-navbar>
+
+<ion-content class="events-homepage">
+  <section class="events-homepage__section">
+    <!-- <button class="events-homepage__all-events-button" (click)="goToPublicEventShowPage()">Browse All Events</button> -->
+    <img class="events-homepage__hero-image" src="img/featured_events_hero.png"/>
+    <h1 class="events-homepage__feature-title">Featured Events</h1>
+    <ion-slides
+      pager
+      [zoom]="-1"
+      [options]="sliderOptions"
+      class="events-homepage__slider-container">
+      <ion-slide class="events-homepage__slider" *ngFor="let featuredEvent of publicEvents">
+        <div
+          class="events-homepage__event-details">
+          <div
+            class="events-homepage__full-bg-event-image"
+            [style.background-image]="'url(' + featuredEvent.image + ')'"
+            (click)="goToPublicEventShowPage(featuredEvent.id)"
+            tappable>
+            <div class="events-homepage__event-text-container">
+              <p class="events-homepage__event-name">{{featuredEvent.name}}</p>
+              <div class="events-homepage__event-tags-container">
+                <span *ngFor="let eventTag of featuredEvent.eventTags" class="event-tag event-tag-{{eventTag.id % 17}}">{{eventTag.title}}</span>
+              </div>
+              <!-- <p class="events-homepage__event-address">{{plainAddress(featuredEvent.locationAddress)}}</p> -->
+              <!-- <div class="events-homepage__buttons-container">
+                <button class="events-homepage__action-button" (click)="goToPublicEventShowPage(featuredEvent.id)">Event Detail</button>
+              </div> -->
+            </div>
+          </div>
+          <!-- <img class="events-homepage__event-image" [src]="featuredEvent.image"/> -->
+          <!-- <div class="events-homepage__description-container">
+            <p class="events-homepage__event-description" [innerHTML]="featuredEvent.description"></p>
+          </div> -->
+        </div>
+      </ion-slide>
+    </ion-slides>
+    <button class="events-homepage__browse-all-button" (click)="handleListByDayButtonClicked()" tappable>BROWSE ALL EVENTS
+    </button>
+  </section>
+</ion-content>

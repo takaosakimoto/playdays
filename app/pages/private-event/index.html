@@ -1,0 +1,16 @@
+<ion-navbar primary *navbar>
+  <ion-title>PRIVATE EVENTS</ion-title>
+</ion-navbar>
+<ion-content class="">
+  <div [hidden]="privateEvents.length !== 0">
+    <center class="no-joinned-private-event">
+      No Upcoming Private Events
+    </center>
+  </div>
+
+  <private-event-list
+    [privateEvents]="privateEvents"
+    (onClickPrivateEvent)="handlePrivateEventClicked($event)"
+    (onClickPlace)="handlePlaceClicked($event)">
+  </private-event-list>
+</ion-content>

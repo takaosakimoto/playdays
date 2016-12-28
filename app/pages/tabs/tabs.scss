@@ -1,0 +1,96 @@
+ion-tabbar-section {
+  background-color: #FFFFFF;
+  z-index: 999;
+  font-size: 8px;
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+}
+
+.tab-button[aria-selected=true] {
+
+  .ion-ios-customEventsIcon,
+  .ion-ios-customEventsIcon-outline,
+  .ion-md-customEventsIcon {
+    content: url(../../img/tab_events_icon_selected.svg);
+    padding: 4px 4px 2px;
+  }
+
+  .ion-ios-customDirectoryIcon,
+  .ion-ios-customDirectoryIcon-outline,
+  .ion-md-customDirectoryIcon {
+    content: url(../../img/tab_directory_selected.svg);
+    padding: 6px 4px 2px;
+  }
+  .ion-ios-customFriendsIcon,
+  .ion-ios-customFriendsIcon-outline,
+  .ion-md-customFriendsIcon {
+    content: url(../../img/tab_friends_icon_selected.svg);
+    padding: 6px 4px 2px;
+  }
+  .ion-ios-customMeIcon,
+  .ion-ios-customMeIcon-outline,
+  .ion-md-customMeIcon {
+    content: url(../../img/tab_me_icon_selected.svg);
+    padding: 6px 4px 2px;
+  }
+  .ion-ios-customLikesIcon,
+  .ion-ios-customLikesIcon-outline,
+  .ion-md-customLikesIcon {
+    content: url(../../img/bottom_tab_star_blue.svg);
+    padding: 6px 4px 2px;
+  }
+}
+
+.ion-ios-customEventsIcon,
+.ion-ios-customEventsIcon-outline,
+.ion-md-customEventsIcon {
+  content: url(../../img/tab_events_icon.svg);
+  padding: 4px 4px 2px;
+}
+
+.ion-ios-customDirectoryIcon,
+.ion-ios-customDirectoryIcon-outline,
+.ion-md-customDirectoryIcon {
+  content: url(../../img/tab_directory_icon.svg);
+  padding: 6px 4px 2px;
+}
+
+.ion-ios-customFriendsIcon,
+.ion-ios-customFriendsIcon-outline,
+.ion-md-customFriendsIcon {
+  content: url(../../img/tab_friends_icon.svg);
+  padding: 6px 4px 2px;
+}
+
+.ion-ios-customMeIcon,
+.ion-ios-customMeIcon-outline,
+.ion-md-customMeIcon {
+  content: url(../../img/tab_me_icon.svg);
+  padding: 6px 4px 2px;
+}
+
+.ion-ios-customLikesIcon,
+.ion-ios-customLikesIcon-outline,
+.ion-md-customLikesIcon {
+  content: url(../../img/bottom_tab_star.svg);
+  padding: 6px 4px 2px;
+}
+
+.ion-ios-customBlueLikesIcon,
+.ion-ios-customBlueLikesIcon-outline,
+.ion-md-customBlueLikesIcon {
+  content: url(../../img/bottom_tab_star_blue.svg);
+  padding: 6px 4px 2px;
+}
+
+.ion-ios-customFillBlueLikesIcon,
+.ion-ios-customFillBlueLikesIcon-outline,
+.ion-md-customFillBlueLikesIcon {
+  content: url(../../img/bottom_tab_star_liked.svg);
+  padding: 6px 4px 2px;
+}
+
+
+.tab-button-text {
+  font-size: 8px;
+  font-weight: 700;
+}

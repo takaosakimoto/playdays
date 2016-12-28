@@ -1,0 +1,30 @@
+{
+  "dependencies": {},
+  "devDependencies": {},
+  "globalDependencies": {
+    "bluebird": "registry:dt/bluebird#2.0.0+20160319051630",
+    "chalk": "registry:dt/chalk#0.4.0+20160317120654",
+    "del": "registry:dt/del#2.2.0+20160317120654",
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
+    "express": "registry:dt/express#4.0.0+20160317120654",
+    "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160625155614",
+    "glob": "registry:dt/glob#5.0.10+20160317120654",
+    "gulp": "registry:dt/gulp#3.8.0+20160316155526",
+    "gulp-load-plugins": "registry:dt/gulp-load-plugins#0.0.0+20160316155526",
+    "gulp-typescript": "registry:dt/gulp-typescript#0.0.0+20160317120654",
+    "gulp-util": "registry:dt/gulp-util#0.0.0+20160316155526",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
+    "karma": "registry:dt/karma#0.13.9+20160501125529",
+    "lodash": "registry:dt/lodash#3.10.0+20160619033623",
+    "log4js": "registry:dt/log4js#0.0.0+20160608042355",
+    "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "minimatch": "registry:dt/minimatch#2.0.8+20160317120654",
+    "node": "registry:dt/node#6.0.0+20160621231320",
+    "orchestrator": "registry:dt/orchestrator#0.0.0+20160316155526",
+    "q": "registry:dt/q#0.0.0+20160613154756",
+    "run-sequence": "registry:dt/run-sequence#0.0.0+20160316155526",
+    "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
+    "through2": "registry:dt/through2#2.0.0+20160317120654",
+    "vinyl": "registry:dt/vinyl#1.1.0+20160316155526"
+  }
+}

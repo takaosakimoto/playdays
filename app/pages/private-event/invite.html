@@ -1,0 +1,38 @@
+<ion-toolbar primary>
+  <ion-buttons start>
+    <button (click)="hanldeCloseButtonClicked()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+  </ion-buttons>
+  <ion-title>INVITE FRIENDS</ion-title>
+  <ion-buttons end>
+    <button
+      (click)="handleOkButtonClicked()" [disabled]="selectedFriendIds.length === 0"
+      [style.color]="selectedFriendIds.length === 0 ? 'gray' : 'white'">
+      ok
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-toolbar>
+  <ion-searchbar
+    [placeholder]="'Search'"
+    [debounce]="1000"
+    [hideCancelButton]="shouldHideSearchbarCancelButton"
+    [cancelButtonText]="Cancel"
+    (ionInput)="searchInput$.next($event)">
+  </ion-searchbar>
+</ion-toolbar>
+
+<ion-content class="">
+  <select-friend-group-checkbox-list
+    [friends]="filteredFriends"
+    [selectedFriendIds]="selectedFriendIds"
+    (change)="handleCheckboxChange($event)">
+  </select-friend-group-checkbox-list>
+  <div [hidden]="!showNoSearchResultMessage">
+    <center>
+      No Search Result
+    </center>
+  </div>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-navbar primary *navbar>
+  <ion-title>SELECT FRIENDS</ion-title>
+  <ion-buttons end>
+    <button (click)="shareSession()" [disabled]="selectedFriendIds.length === 0"
+      [style.color]="selectedFriendIds.length === 0 ? 'gray' : 'white'">
+      SHARE
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-toolbar>
+  <ion-searchbar
+    [placeholder]="'Search'"
+    [debounce]="1000"
+    [hideCancelButton]="shouldHideSearchbarCancelButton"
+    [cancelButtonText]="Cancel"
+    (ionInput)="searchInput$.next($event.targe.value)">
+  </ion-searchbar>
+</ion-toolbar>
+
+<ion-content class="">
+  <select-friend-group-checkbox-list
+    [friends]="filteredFriends"
+    (change)="handleCheckboxChange($event)">
+  </select-friend-group-checkbox-list>
+  <div [hidden]="!showNoSearchResultMessage">
+    <center>
+      No Search Result
+    </center>
+  </div>
+</ion-content>

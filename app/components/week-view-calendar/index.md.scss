@@ -1,0 +1,17 @@
+.week-view-calendar-day-text {
+  line-height: 2em;
+  position: relative;
+  top: 0.4rem;
+  background: none;
+  color: inherit;
+}
+
+.week-view-calendar-day-button.activated,
+.week-view-calendar-day-button.segment-activated {
+  color: #6ED3FF;
+}
+
+.week-view-calendar-day-char-container,
+.week-view-calendar-day-container {
+  padding: 0 0;
+}

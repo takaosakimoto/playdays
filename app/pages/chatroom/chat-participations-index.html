@@ -1,0 +1,21 @@
+<ion-navbar primary *navbar>
+  <ion-title class="toobar-title">Who's in the Group</ion-title>
+</ion-navbar>
+
+<ion-content class="chat-participations-index-page">
+
+  <ion-list>
+    <ion-item *ngFor="let participation of chatParticipations">
+      <ion-avatar item-left>
+        <img [src]="participation.consumer.fbUserPictureUrl">
+      </ion-avatar>
+      <h2>
+        {{ participation.consumer.name }}
+      </h2>
+    </ion-item>
+    <ion-item tappable (click)="addUserToChatRoom()" class="add-user-to-chat">
+      add Participant
+    </ion-item>
+  </ion-list>
+
+</ion-content>

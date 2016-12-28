@@ -1,0 +1,15 @@
+<div
+  class="reminder-dashboard-card-block"
+  [ngClass]="{read: reminder.state === 'read',archived: reminder.state == 'archived'}"
+  (click)="goToShowTrialClassPage(reminder.content.id)"
+>
+  <div *ngIf="isUnRead" class="reminder-dashboard-card-opaque"></div>
+  <p class="card-text">You are going to join {{reminder.content.name}} on {{ reminder.content.date | dateDiff:reminder.createdAt }}</p>
+  <button
+    *ngIf="reminder.state !== 'archived'"
+    clear small class="dashboard-card-icon"
+    (click)="archive($event)"
+  >
+    <ion-icon name="close" class="reminder-dashboard-card-close-icon"></ion-icon>
+  </button>
+</div>

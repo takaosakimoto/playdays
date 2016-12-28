@@ -1,0 +1,133 @@
+ion-navbar.signup-page-navbar {
+
+  div.toolbar-background {
+    background-color: #6ED3FF;
+  }
+
+  ion-icon {
+    color: white;
+  }
+
+  ion-title {
+    div.toolbar-title {
+      color: white;
+    }
+  }
+}
+
+.toolbar[primary] .toolbar-title {
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+}
+
+ion-content.signup-page {
+  background-color: white;
+
+  section {
+    margin-bottom: 1em;
+  }
+  div.round-fb-user-picture {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 3rem auto 1rem auto;
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .profile-header {
+    font-family: "Comfortaa", "Varela Round", sans-serif;
+  }
+
+  .user-picture{
+    background: #b612bf;
+    color: #31cbd4;
+    padding: 20px 20px;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    border-radius: 50%;
+  }
+
+  ion-list {
+    ion-list-header {
+      color: #A1A1A1;
+      text-transform: none;
+      margin-bottom: 5px;
+    }
+    ion-label {
+      margin: 12px 12px 12px 0px;
+      ion-icon {
+        font-size: 1.6em;
+
+      }
+      .ion-ios-phone-portrait-outline:before {
+        padding: 0 5px;
+      }
+    }
+
+    ion-input {
+      border-bottom: 1px solid #E8EBEE;
+    }
+
+    ion-select {
+      border-bottom: 1px solid #E8EBEE;
+    }
+
+    ion-textarea {
+      border: 1px solid #E8EBEE;
+    }
+
+    ion-select.location-input {
+      min-width: 45%;
+    }
+
+    ion-select.languages-input {
+      min-width: 90%;
+    }
+
+    section.children {
+
+      ion-card-header {
+         padding: 5px 0px 0px 0px;
+         margin: 0px;
+        ion-item {
+          ion-badge {
+            border-radius: 50%;
+            padding: 5px 9px;
+          }
+          ion-icon {
+            color: #A1A1A1;
+          }
+        }
+      }
+
+
+
+      background-color: #D8D8D8;
+      padding: 10px;
+
+      button.add-new-child-button {
+        font-family: "Comfortaa", "Varela Round", sans-serif;
+        display: block;
+        margin: 0 auto;
+        height: 3em;
+      }
+
+      ion-label {
+        word-spacing: 9em;
+      }
+
+      input[type="month"] {
+        display: block;
+        padding: 0;
+        border: 0;
+        width: 100%;
+        background-color: white;
+        -webkit-appearance: none;
+        word-spacing: 10em;
+      }
+    }
+
+  }
+}

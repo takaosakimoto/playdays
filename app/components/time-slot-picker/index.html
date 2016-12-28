@@ -1,0 +1,146 @@
+<!-- <ion-card class="time-slot-card">
+
+  <div class="time-slot-main">
+    <div
+      class="time-slot-thumb"
+      [style.background-image]="'url(' + model.item.image + ')'"
+    >
+    </div>
+
+    <div class="time-slot-list-info">
+      <ion-label class="time-slot-list-name">
+        <span>{{ model.item.name }}</span>
+      </ion-label>
+
+      <ion-row [style.white-space]="'normal'" class="time-slot-info-row">
+        <ion-col class="time-slot-icon-container time-slot-info-col">
+          <ion-icon name="pin" class="time-slot-location-icon pin"></ion-icon>
+        </ion-col>
+        <ion-col class="time-slot-info-col time-slot-location" [innerHTML]="model.item.locationAddress">
+        </ion-col>
+      </ion-row>
+
+      <ion-label [style.white-space]="'normal'" class="time-slot-info-item">
+        <ion-icon name="pin" class="time-slot-location-icon pin">
+        </ion-icon>
+        <span [innerHTML]="model.item.locationAddress"></span>
+      </ion-label>
+
+    </div>
+
+  </div>
+
+</ion-card> -->
+<ion-row [style.text-align]="'center'">
+  <p class="time-slot-picker secondary-header">Booking</p>
+</ion-row>
+
+<ion-row *ngIf="!model.item.bookingHotline && !model.item.bookingUrl && !model.item.bookingEmail" class="no-booking-message" [style.text-align]="'center'">
+  There is no need to book for this drop-in event. Please call the general hotline for more information.
+</ion-row>
+<hr>
+
+<ion-row class="booking-info-row">
+  <a  [ngClass]="{'bookingDisabled': !model.item.bookingHotline}" href="tel:{{model.item.bookingHotline}}" class="show-detail-info-item"><ion-icon name="call" class="show-detail-icon call"></ion-icon>Phone</a>
+  <a
+    class="show-detail-info-item"
+    href="{{model.item.bookingUrl}}"
+    target="_blank"
+    [style.text-decoration]="'none'"
+    [ngClass]="{'bookingDisabled': !model.item.bookingUrl}"
+  >
+  <ion-icon name="link" class="show-detail-icon link"></ion-icon>Website
+  </a>
+  <a
+    class="show-detail-info-item"
+    href="mailto:{{model.item.bookingEmail}}"
+    target="_blank"
+    [style.text-decoration]="'none'"
+    [ngClass]="{'bookingDisabled': !model.item.bookingEmail}"
+  ><ion-icon name="ios-at" class="show-detail-icon email"></ion-icon>Email</a>
+</ion-row>
+<hr>
+
+<!-- <ion-row *ngIf="!!model.item.bookingUrl" class="show-detail-info-row">
+  <ion-col class="show-detail-icon-container" [style.flex-grow]="0">
+    <ion-icon name="link" class="show-detail-icon link"></ion-icon>
+  </ion-col>
+  <ion-col class="show-detail-info-col show-detail-info-link">
+    <a
+      href="{{model.item.bookingUrl}}"
+      target="_blank"
+      [style.text-decoration]="'none'"
+    >Visit Booking Website</a>
+  </ion-col>
+</ion-row> -->
+
+
+<ion-list
+  radio-group
+  [(ngModel)]="selectedTimeSlotId"
+  class="time-slot-picker-list"
+  [style.height]="timeSlotPickerListHeight"
+>
+
+  <p
+    *ngIf="timeSlots.length > 0"
+    class="time-slot-picker secondary-header"
+  >
+    Timetable
+  </p>
+
+  <!-- <p
+    *ngIf="(selectedTimeSlotIndex !== -1) && timeSlots.length > 1"
+    class="time-slot-picker secondary-header also-interested"
+    [style.left]="confirmed?'-100%':'0'"
+  >
+    Other Available Dates
+  </p> -->
+
+  <div class="time-slot-picker-item-list">
+    <div
+      *ngFor="let timeSlot of timeSlots"
+      class="time-slot-picker-item"
+    >
+      <!-- <ion-radio class="time-slot-picker-radio-button"></ion-radio> -->
+      <div class="time-slot-picker-item-info">
+        <ion-label class="time-slot-picker-item-label">
+          <ion-icon name="calendar" class="time-slot-icon calendar"></ion-icon>
+          {{ timeSlotDate(timeSlot) }}
+        </ion-label>
+        <ion-label class="time-slot-picker-item-label--time">
+          <ion-icon name="time" class="time-slot-icon time"></ion-icon>
+          {{ timeSlotTime(timeSlot) }}
+        </ion-label>
+      </div>
+      <!-- <button
+        [style.opacity]="(timeSlot.confirmButtonText !== 'GOING') || (_selectedTimeSlotId === timeSlot.id)?1:0"
+        secondary (click)="emitConfirm()"
+        [ngClass]="buttonClass(timeSlot)"
+        [attr.disabled]="(timeSlot.confirmButtonText === 'GOING') && (_selectedTimeSlotId === timeSlot.id)?null:true"
+      >
+        {{ timeSlot.confirmButtonText }}
+      </button> -->
+    </div>
+  </div>
+
+  <!-- <div
+    class="share-with-friends"
+  >
+    <button
+      round
+      class="share-with-friends-btn"
+      (click)="emitShare($event)"
+      >
+      SHARE WITH FRIENDS
+    </button>
+  </div> -->
+
+  <p
+    *ngIf="noAvableTimeSlot"
+    class="time-slot-picker centered secondary-header"
+  >
+    No Other Available Dates For This Event
+  </p>
+
+</ion-list>

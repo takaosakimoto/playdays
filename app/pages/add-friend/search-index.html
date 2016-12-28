@@ -1,0 +1,36 @@
+<ion-navbar primary *navbar>
+  <ion-title>ADD NEW FRIEND</ion-title>
+</ion-navbar>
+<ion-toolbar [hidden]="!showSearchbar">
+  <ion-searchbar
+    [placeholder]="'Search by username'"
+    [debounce]="searchbarDebounce"
+    [hideCancelButton]="shouldHideSearchbarCancelButton"
+    [cancelButtonText]="Cancel"
+    (ionInput)="searchInput$.next($event)">
+  </ion-searchbar>
+</ion-toolbar>
+
+<ion-content class="friend-search-user-index-page">
+  <ion-list
+    [virtualScroll]="serachResults" [hidden]="serachResults.length === 0">
+    <ion-item detail-none *virtualItem="let user">
+      <ion-avatar item-left button clear  (click)="goToAddFriendShowPage(user)">
+        <img [src]="user.fbUserPictureUrl"/>
+      </ion-avatar>
+      <div button dark clear (click)="goToAddFriendShowPage(user)">
+        <p>{{user.name}}<p>
+      </div>
+
+      <button primary clear item-right [disabled]="user.isAdded || me.id == user.id" (click)="friendRequestAction(user)">
+        {{ showFriendActionLabel(user) }}
+      </button>
+    </ion-item>
+  </ion-list>
+
+  <div [hidden]="!showNoSearchResultMessage">
+    <center>
+      No Search Result
+    </center>
+  </div>
+</ion-content>

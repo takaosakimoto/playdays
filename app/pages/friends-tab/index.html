@@ -1,0 +1,11 @@
+<ion-navbar primary *navbar>
+  <ion-title [hidden]="!showPage">FRIENDS</ion-title>
+</ion-navbar>
+
+<ion-content class="friends-tab-index-page">
+  <div [hidden]="!showPage">
+    <nav-item-groups
+      [navGroups]="friendsTabNavGroups">
+    </nav-item-groups>
+  </div>
+</ion-content>

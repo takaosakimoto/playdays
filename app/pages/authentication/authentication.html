@@ -1,0 +1,33 @@
+<ion-toolbar primary class="authentication-page-navbar">
+  <!-- <ion-buttons>
+    <button (click)="close()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+  </ion-buttons> -->
+  <ion-title class="toobar-title">LOGIN</ion-title>
+</ion-toolbar>
+
+<ion-content class="authentication-page">
+  <section>
+    <img src="img/logo.jpg"/>
+  </section>
+  <section>
+    <ion-col offset-10 width-80>
+      <button  id="login-with-fb-button" (click)="_gotoLogin()" round full Primary>
+        <ion-icon name="ios-lock"></ion-icon>
+        LOGIN
+      </button>
+    </ion-col>
+
+    <ion-col>
+      <center>or</center>
+    </ion-col>
+    <ion-col offset-10 width-80>
+      <button  id="signup-with-fb-button" (click)="_gotoSignup()" round full secondary>
+        <ion-icon name="md-person-add"></ion-icon>
+        SIGN UP
+      </button>
+    </ion-col>
+  </section>
+
+</ion-content>

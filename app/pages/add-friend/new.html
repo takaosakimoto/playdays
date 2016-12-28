@@ -1,0 +1,26 @@
+<ion-navbar primary *navbar>
+  <ion-title>ADD NEW FRIEND</ion-title>
+</ion-navbar>
+
+<ion-content class="friend-new-page">
+  <ion-list>
+    <ion-item-group>
+      <ion-list-header class="profile-header" light>
+        Find A New Friend
+      </ion-list-header>
+      <button
+        ion-item
+        (click)="goToFriendSearchPage()">
+        <ion-label>
+          Search By Username
+        </ion-label>
+      </button>
+    </ion-item-group>
+  </ion-list>
+
+  <friend-request-list
+    [friendRequests]="friendRequests"
+    (onClickFriendRequestItem)="goToAddFriendhowPage($event)"
+    (onClickAcceptButton)="acceptFriendRequest($event)">
+  </friend-request-list>
+</ion-content>

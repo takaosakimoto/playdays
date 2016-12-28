@@ -1,0 +1,53 @@
+<ion-navbar primary *navbar>
+  <ion-title>USER PROFILE</ion-title>
+</ion-navbar>
+
+<ion-content class="friend-search-user-show-page">
+  <ion-item-group>
+    <ion-item detail-none>
+      <ion-avatar item-left>
+        <img [src]="user.fbUserPictureUrl"/>
+      </ion-avatar>
+      <p>{{ user.name }}</p>
+    </ion-item>
+
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>
+    </ion-item-divider>
+    <ion-item detail-none n>
+      <ion-row>
+        <ion-col width-20>
+          Region
+        </ion-col>
+        <ion-col offset-10 width-70>
+          {{user.district.name}},  {{user.region.name}}
+        </ion-col>
+      </ion-row>
+
+    </ion-item>
+    <ion-item detail-none>
+      <ion-row>
+        <ion-col width-20>
+          Children
+        </ion-col>
+        <ion-col offset-10 width-70>
+          <div *ngFor="let child of user.children">
+            {{child.birthday}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item detail-none>
+      <ion-row>
+        <ion-col width-20>
+            What’s <br>in mind
+        </ion-col>
+        <ion-col offset-10 width-70>
+          {{user.aboutMe}}          
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-item-group>
+
+</ion-content>

@@ -1,0 +1,153 @@
+.time-slot-card {
+  margin: 0.5em;
+  width: calc(100% - 1em);
+  border-radius: 0.3em;
+  height: 25%;
+  box-shadow: 0px 0px 1px 1px rgba(72,72,72,0.12);
+}
+
+.time-slot-main {
+  display: flex;
+  height: 100%;
+}
+
+.time-slot-list-tags {
+  margin-top: .5rem;
+}
+
+$card-content-height: 200px;
+$lines-to-show: 2;
+$time-slot-line-height: 1.4;
+$time-slot-font-size: 14px;
+$address-font-size: 10px;
+
+.time-slot-thumb {
+  position: relative;
+  min-width: 100%; // 100% - 66%
+  height: $card-content-height;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+
+  .time-slot-list-info {
+    width: 100%; // 100% - 34%
+    display: flex;
+    flex-direction: row;
+    padding: 0 1em 0 1em;
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 6px;
+    z-index: 4;
+    font-family: "Comfortaa";
+    font-weight: 400;
+
+    ion-label.time-slot-list-info-item {
+      flex-basis: 60% !important;
+      flex: 0;
+      width: 100%;
+      white-space: normal;
+      height: $address-font-size*$time-slot-line-height*$lines-to-show;
+      line-height: $time-slot-line-height;
+      -webkit-line-clamp: $lines-to-show;
+      -webkit-box-orient: vertical;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0 !important;
+    }
+  }
+}
+
+.time-slot-list-info-overlay {
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  background: -webkit-linear-gradient(bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.5));
+  z-index: 3;
+}
+
+// $lines-to-show: 2;
+// $time-slot-line-height: 1.4;
+// $time-slot-font-size: 14px;
+
+.time-slot-list-name {
+  color: #494949;
+  display: block;
+  display: -webkit-box;
+  // height: $time-slot-font-size*$time-slot-line-height*$lines-to-show;
+  font-size: $time-slot-font-size;
+  line-height: $time-slot-line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.05em;
+  // margin: 1rem 0 1.3rem 0;
+}
+
+.time-slot-icon-container {
+  flex: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.time-slot-icon {
+  width: 1em;
+}
+
+.time-slot-icon.calendar {
+  color: #F8B118;
+}
+
+.time-slot-icon.time {
+  color: #3FB3B0;
+}
+
+.time-slot-icon.pin {
+  color: #EF6942;
+  margin-right: 1rem;
+}
+
+.time-slot-show-info-col {
+  margin-left: 1.1em;
+}
+
+.ion-label.time-slot-list-info-item.time {
+  flex-basis: 30%;
+}
+
+.time-slot-list-divider {
+  position: relative;
+  height: 1px;
+  box-shadow: inset 0 0 0px 1px rgba(0,0,0,0.15);
+}
+
+.time-slot-footer {
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  color: #6ED3FF;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time-slot-list-like-container,
+.time-slot-list-joined-container {
+  font-size: 1.2em;
+}
+
+.time-slot-list-like-container{
+  color: red;
+}
+
+.time-slot-list-joined-container{
+  color: #96A6B5;
+}
+
+.time-slot-list-play-btn{
+  float: right;
+}

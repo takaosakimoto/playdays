@@ -1,0 +1,13 @@
+<ion-navbar primary *navbar>
+  <ion-title>JOIN TRIAL CLASS</ion-title>
+</ion-navbar>
+
+<ion-content class="trial-class-join-page">
+
+  <time-slot-picker
+    [model]="trialClassItem"
+    [modelName]="'Class'"
+    (confirmOnClick)="joinTrialClass($event)"
+  ></time-slot-picker>
+
+</ion-content>

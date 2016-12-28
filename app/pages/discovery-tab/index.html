@@ -1,0 +1,14 @@
+<ion-navbar primary *navbar>
+  <ion-title>HOME</ion-title>
+</ion-navbar>
+
+<ion-content class="discovery-tab-index-page">
+  <button
+    *ngFor="let navItem of discoveryTabNavItems"
+    (click)="goToNavItemPage(navItem.page)"
+    class="navItem"
+    [ngStyle]="{'background-image': navItem.bgImage}"
+  >
+    <center>{{ navItem.title }}</center>
+  </button>
+</ion-content>

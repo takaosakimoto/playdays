@@ -1,0 +1,19 @@
+.week-view-calendar-day-button {
+  border: none;
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  background: none !important;
+}
+
+.segment-button.segment-activated > .week-view-calendar-day-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: map-get($colors, primary);
+  color: #FFFFFF;
+}
+
+.week-view-calendar-day-text {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50% 50%;
+}

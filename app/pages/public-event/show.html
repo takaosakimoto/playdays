@@ -1,0 +1,62 @@
+<ion-navbar primary *navbar>
+  <ion-title>EVENT DETAILS</ion-title>
+</ion-navbar>
+
+<ion-content class="public-event-show-page" elastic-header>
+  <hero-image
+    [model]="publicEventItem">
+  </hero-image>
+  <div class="toggle-btn-container">
+    <a
+      class="toggle-btn-background"
+    >
+      <div
+        #informationText
+        (click)="changeDisplayToInformation()"
+        class="dashboard-toggle-btn-text"
+        [ngClass]="{'active-toggle-btn-text': showingInformation}"
+      >INFORMATION</div>
+      <div
+        #bookingText
+        (click)="changeDisplayToBooking()"
+        class="calendar-toggle-btn-text"
+        [ngClass]="{'active-toggle-btn-text': showingBooking}"
+      >BOOKING</div>
+      <div
+        #commentText
+        (click)="changeDisplayToComments()"
+        class="calendar-toggle-btn-text"
+        [ngClass]="{'active-toggle-btn-text': showingComments}"
+      >COMMENTS</div>
+      <div
+        [ngClass]="{'showing-information': showingInformation, 'showing-booking': showingBooking, 'showing-comments': showingComments}"
+        class="toggle-btn"
+      >
+    </div>
+    </a>
+  </div>
+  <div>
+    <div *ngIf="showingInformation">
+      <show-detail
+        [model]="publicEventItem"
+        (joinOnClick)="goToJoinPublicEvent($event)"
+        (onClickLike)="gotoLike($event)"
+      ></show-detail>
+    </div>
+    <div *ngIf="showingBooking">
+      <time-slot-picker
+        [model]="publicEventItem"
+        [modelName]="'Section'"
+        (confirmOnClick)="joinPublicEvent($event)"
+        (shareOnClick)="sharePublicEvent()"
+      ></time-slot-picker>
+    </div>
+    <div *ngIf="showingComments">
+      <comment-list
+        [comments]="comments"
+        (onAddComment)="handleOpenCommentModalButtonClicked()"
+        (onCommentAvatarClick)="gotoUserProfile($event)"
+      ></comment-list>
+    </div>
+  </div>
+</ion-content>

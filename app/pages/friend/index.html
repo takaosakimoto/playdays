@@ -1,0 +1,31 @@
+<ion-navbar primary *navbar>
+  <ion-title [hidden]="!showPage">FRIENDS</ion-title>
+  <ion-buttons end>
+    <button (click)="goToFriendSearchPage()">
+      <ion-icon name="ios-add-outline"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-toolbar [hidden]="!showSearchbar || !showPage">
+  <ion-searchbar
+    [placeholder]="'Search'"
+    [debounce]="1000"
+    [hideCancelButton]="shouldHideSearchbarCancelButton"
+    [cancelButtonText]="Cancel"
+    (ionInput)="searchInput$.next($event.target.value)">
+  </ion-searchbar>
+</ion-toolbar>
+
+<ion-content class="friend-index-page">
+  <friend-group-list
+    [friends]="filteredFriends"
+    (onClickFriendItem)="goToFriendShowPage($event)">
+  </friend-group-list>
+
+  <div [hidden]="!showNoSearchResultMessage">
+    <center>
+      No Search Result
+    </center>
+  </div>
+</ion-content>

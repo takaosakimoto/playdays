@@ -1,0 +1,79 @@
+.profile-page-content-container {
+  background-color: #FFFFFF;
+  padding-top: 5px;
+}
+
+ion-content.profile-page.statusbar-padding {
+  height: 90% !important;
+}
+
+.profile-page-profile-image {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+}
+
+.profile-page-text-content {
+  padding: 1em;
+}
+
+.profile-page-profile-edit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-page-user-name {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 18px;
+}
+
+.profile-page-edit-btn {
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.profile-info-col-l {
+  width: 30%;
+  color: #B8B8B8;
+  flex: initial;
+}
+
+.profile-info-col-r {
+  width: 70%;
+}
+
+.submit-profile-button {
+  box-shadow: 0 0.7em 1.6em 0.1em rgba(0, 0, 0, 0.24);
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.profile-footer {
+  text-align: center;
+  margin: 1em 0 2em 0;
+}
+
+.profile-logout-button {
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  width: 80%;
+  background-color: #F6F6F6;
+  color: #767172;
+  box-shadow: 0 0.1em 1em 0.1em rgba(0, 0, 0, 0.24);
+}
+
+.user-picture{
+  align-items: center;
+  font-family: "Comfortaa";
+  // background-color: #6ED3FF;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  font-size: 40px;
+  border-radius: 50%;
+  text-transform: uppercase;
+}

@@ -1,0 +1,17 @@
+<div
+  class="reminder-dashboard-card-block"
+  [ngClass]="{read: reminder.state === 'read',archived: reminder.state == 'archived'}"
+>
+  <div *ngIf="isUnRead" class="reminder-dashboard-card-opaque"></div>
+  <ion-avatar item-left class="reminder-dashboard-card-avatar">
+    <img [src]="reminder.content.image" class="reminder-dashboard-card-img"/>
+  </ion-avatar>
+  <p class="card-text">{{reminder.content.name}} send you a friend request</p>
+  <button
+    *ngIf="reminder.state !== 'archived'"
+    clear small class="dashboard-card-icon"
+    (click)="archive($event)"
+  >
+    <ion-icon name="close" class="reminder-dashboard-card-close-icon"></ion-icon>
+  </button>
+</div>

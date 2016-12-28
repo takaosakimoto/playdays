@@ -1,0 +1,104 @@
+.calendar-month {
+
+  $l-background-color: #FFFFFF;
+  $strip-width: 0.2em;
+  $disabled-strip-color: #EFEFEF;
+
+  background-image: repeating-linear-gradient(
+    45deg,
+    $l-background-color,
+    $l-background-color $strip-width,
+    $disabled-strip-color $strip-width,
+    $disabled-strip-color ($strip-width * 2)
+  );
+
+  .calendar-row-container {
+    padding: 0 0em;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .calendar-month-header,
+  .calendar-day-char-container {
+    @extend .calendar-row-container;
+    background-color: $l-background-color;
+  }
+
+  .calendar-day-button {
+    color: #3B3B3B;
+  }
+
+  .calendar-day-button:last-child,
+  .calendar-day-button:first-child {
+    color: #B8B8B8
+  }
+
+  .calendar-month-header-hidden-item {
+    visibility: hidden;
+  }
+
+  .calendar-month-header-item {
+    color: map-get($colors, primary);
+  }
+
+  .calendar-day-char {
+    font-size: 0.7em;
+  }
+
+  .calendar-date-cell {
+    border-top: 0.05em solid #ECE0E2;
+    height: 3.5em;
+
+    display: inline-block;
+    font-size: 1.4em;
+
+    padding: 0;
+    margin: 0;
+
+    background-color: $l-background-color;
+  }
+
+  .calendar-empty-cell {
+    border-top: 1px solid rgba(0,0,0,0);
+    background-color: $l-background-color;
+  }
+
+  .calendar-disabled-cell {
+    background-color: rgba(0,0,0,0);
+  }
+
+  .calendar-date {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.7em;
+    margin-top: 0.2em;
+  }
+
+  .calendar-selected-date {
+    background-color: map-get($colors, primary);
+    color: $l-background-color;
+    border-radius: 100%;
+  }
+
+  .calendar-date-with-event::after {
+    content: "";
+    width: 0.35em;
+    height: 0.35em;
+    border-radius: 100%;
+    background-color: #7ED321;
+    display: block;
+    margin:  0.5em auto 0 auto;
+  }
+
+  .calendar-date-passed-event::after {
+    content: "";
+    width: 0.35em;
+    height: 0.35em;
+    border-radius: 100%;
+    background-color: #D8D8D8;
+    display: block;
+    margin:  0.5em auto 0 auto;
+  }
+
+}

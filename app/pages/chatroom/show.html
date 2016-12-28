@@ -1,0 +1,56 @@
+<ion-navbar primary *navbar>
+  <ion-title>{{ chatroom.name }}</ion-title>
+  <ion-buttons end [hidden]="!chatroom.isGroupChat">
+    <button (click)="showChatParticipations()">
+      <ion-icon name="people"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-content class="chatroom-show-page">
+  <div>
+    <ion-card
+      *ngFor="let chatMessage of chatroom.chatMessages"
+      [style.float]="chatMessage.chatParticipationId === currentChatParticipation.id ? 'right' : 'left'">
+
+      <ion-card-content
+        [hidden]="!showContent"
+        [style.justify-content]="chatMessage.chatParticipationId === currentChatParticipation.id ? 'flex-end' : 'flex-start'"
+        class="chatroom-show-page-ion-card-content">
+        <span class="message-text"
+          [style.background]="chatMessage.chatParticipationId === currentChatParticipation.id ? '#E0FDFF' : 'white'"
+          [style.justify-content]="chatMessage.chatParticipationId === currentChatParticipation.id ? 'flex-end' : 'flex-start'">
+          {{chatMessage.textContent}}
+        </span>
+        <img
+          [src]="chatMessage.fbUserPictureUrl"
+          class="chatroom-show-page-img"
+          [ngClass]="chatMessage.chatParticipationId !== currentChatParticipation.id ? 'left' : 'right'"
+        />
+      </ion-card-content>
+
+
+
+    </ion-card>
+
+  </div>
+
+</ion-content>
+
+<form class="chatroom-message-from">
+  <div #hackElem></div>
+  <textarea
+    #elem
+    [(ngModel)]="chatBox"
+    (keypress)="messageInputKeypress($event, elem)"
+    placeholder="Message..."
+    type="text"
+    rquired
+    rows="1"
+    autosize
+    class="chatroom-message-input"
+    (focus)="hackToHideTabbar(hackElem)"
+    (blur)="hackToDisplayTabbar(hackElem)"
+  ></textarea>
+  <!-- https://forum.ionicframework.com/t/auto-hide-tabs-when-keyboard-is-open-in-ionic2/55697 -->
+</form>

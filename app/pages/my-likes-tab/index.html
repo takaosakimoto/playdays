@@ -1,0 +1,42 @@
+<ion-navbar primary *navbar>
+  <ion-title>FAVORITES</ion-title>
+</ion-navbar>
+
+<ion-content class="my-likes-page">
+  <div class="toggle-btn-container">
+    <a
+      class="toggle-btn-background--directory"
+    >
+      <div
+        #eventsText
+        (click)="changeDisplayToEvents()"
+        class="dashboard-toggle-btn-text--directory"
+        [ngClass]="{'active-toggle-btn-text': showingEvents}"
+      >EVENTS</div>
+      <div
+        #directoriesText
+        (click)="changeDisplayToDirectories()"
+        class="calendar-toggle-btn-text--directory"
+        [ngClass]="{'active-toggle-btn-text': showingDirectories}"
+      >DIRECTORIES</div>
+      <div
+        [ngClass]="{'showing-events': showingEvents, 'showing-directories': showingDirectories}"
+        class="toggle-btn--directory">
+    </div>
+    </a>
+  </div>
+  <div>
+    <div *ngIf="showingEvents">
+      <like-events
+          [events]="likedEvents"
+          (gotoDetails)="gotoEventDetail($event)"
+        ></like-events>
+    </div>
+    <div *ngIf="showingDirectories">
+        <like-directories
+          [places]="likedPlaces"
+          (gotoDetails)="gotoDirectoryDetail($event)"
+        ></like-directories>
+    </div>
+  </div>
+</ion-content>

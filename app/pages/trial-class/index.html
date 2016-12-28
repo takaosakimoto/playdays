@@ -1,0 +1,13 @@
+<ion-navbar primary *navbar>
+  <ion-title>TRIAL CLASS</ion-title>
+</ion-navbar>
+
+<ion-content class="trial-class-index-page">
+
+  <time-slot-list
+    [timeSlotAble]="trialClasses"
+    (cardOnClick)="goToTrialClassShowPage($event)"
+    (buttonOnClick)="goToJoinTrialClass($event)"
+  ></time-slot-list>
+
+</ion-content>

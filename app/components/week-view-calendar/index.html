@@ -1,0 +1,33 @@
+<ion-slides
+  [options]="sliderOptions"
+  style="height: auto; background-color: #FFF;"
+>
+  <ion-slide *ngFor="let week of slidesStartDays">
+    <ion-row class="week-view-calendar-day-char-container">
+      <ion-col *ngFor="let day of DAYSC" class="week-view-calendar-day-button week-view-calendar-day-char">
+        {{ day }}
+      </ion-col>
+    </ion-row>
+    <ion-segment class="week-view-calendar-day-container">
+    <!-- <ion-segment [(ngModel)]="dayOffset" class="week-view-calendar-day-container"> -->
+      <ion-segment-button
+        class="week-view-calendar-day-button"
+        *ngFor="let day of DAYSN"
+        value="{{ day / 1 }}"
+        tappable (click)="dayOffset = day"
+        [ngClass]="{'segment-activated': dayOffset === day}"
+      >
+        <div class="week-view-calendar-day-text">
+          {{ week | getDateByWeekAndDay:day }}
+        </div>
+      </ion-segment-button>
+    </ion-segment>
+    <ion-row class="week-view-calendar-date-row">
+      <div class="calendar-chevron left" style="background-image: url(img/rounded_chevron_left.png)"></div>
+      <p class="week-view-calendar-date-text">
+        {{ week | dayString:_dayOffset }}
+      </p>
+      <div class="calendar-chevron right" style="background-image: url(img/rounded_chevron_right.png)"></div>
+    </ion-row>
+  </ion-slide>
+</ion-slides>

@@ -1,0 +1,49 @@
+<ion-navbar primary *navbar>
+  <ion-title>REMINDER</ion-title>
+
+  <ion-buttons end [hidden]="!shouldDisplayWeekViewBtn()">
+    <button (click)="gotoWeekView()">
+      <ion-icon name="ios-calendar"></ion-icon>
+    </button>
+  </ion-buttons>
+
+  <ion-buttons [hidden]="!shouldDisplayMonthViewBtn()">
+    <button (click)="gotoMonthView()">
+      <ion-icon name="ios-arrow-back"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-toolbar class="toggle-btn-toolbar">
+  <div class="toggle-btn-container">
+    <a
+      (click)="changeDisplayComponent()"
+      class="toggle-btn-background"
+    >
+      <div
+        #dashboardText
+        class="dashboard-toggle-btn-text"
+        [ngClass]="{'active-toggle-btn-text': showingDashboard}"
+      >DASHBOARD</div>
+      <div
+        #calendarText
+        class="calendar-toggle-btn-text"
+        [ngClass]="{'active-toggle-btn-text': !showingDashboard}"
+      >EVENT CALENDAR</div>
+      <div
+        [style.left]="(showingDashboard?0:dashboardText.offsetWidth) + 'px'"
+        [style.right]="(showingDashboard?calendarText.offsetWidth:0) + 'px'"
+        class="toggle-btn"
+      ></div>
+    </a>
+  </div>
+</ion-toolbar>
+
+<ion-content class="">
+  <!-- <div [ngSwitch]="showingDashboard" >
+      <dashboard-reminder-list *ngSwitchWhen="true" [reminders]="reminders"></dashboard-reminder-list>
+      <calendar-reminder #calendarReminder *ngSwitchWhen="false" [reminders]="reminders"></calendar-reminder>
+  </div> -->
+  <dashboard-reminder-list *ngIf="showingDashboard" [reminders]="reminders"></dashboard-reminder-list>
+  <calendar-reminder #calendarReminder [hidden]="showingDashboard" [reminders]="reminders"></calendar-reminder>
+</ion-content>

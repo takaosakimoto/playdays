@@ -1,0 +1,232 @@
+$lines-to-show: 2;
+$event-description-line-height: 1.4;
+$event-description-font-size: 12px;
+
+img.events-homepage__hero-image {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.events-homepage {
+  background-color: #FFF;
+  &__slider-container {
+    height: 50vh;
+    .swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet {
+      background-color: #CCCCC;
+    }
+    span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: map-get($colors, primary) !important;
+    }
+    .swiper-container-horizontal > .swiper-pagination {
+      bottom: 1.5rem !important;
+    }
+  }
+  &__slider {
+    height: 95%;
+
+    &.swiper-slide.swiper-slide-active {
+      transition: 0.5s all linear;
+      width: 80% !important;
+      margin: 0 1rem;
+      &:first-child {
+        margin-left: 9%;
+      }
+    }
+    &.swiper-slide.swiper-slide-prev {
+      // transition: 0.2s all linear;
+      width: 108% !important;
+      transform: scaleY(0.8);
+      filter: opacity(0.5);
+      pointer-events: none;
+    }
+    &.swiper-slide.swiper-slide-next {
+      // transition: 0.2s all linear;
+      width: 110% !important;
+      transform: scaleY(0.8);
+      filter: opacity(0.5);
+      pointer-events: none;
+    }
+  }
+
+  &__browse-all-button {
+    display: block;
+    margin: 0 auto;
+    height: 35px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    padding: 1rem 3rem;
+    font-weight: 700;
+    height: 50px;
+  }
+  &__feature-title {
+    font-family: "Comfortaa";
+    font-weight: 700;
+    color: #96A6B5;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+  }
+  // &__hero-image {
+  // }
+  &__section {
+    height: 95%;
+  }
+  &__event-details {
+    margin-top: -1vh;
+  }
+  &__event-tags-container {
+    display: flex;
+    flex-direction: row;
+    color: #FFF;
+    font-family: "Comfortaa", sans-serif;
+  }
+  &__full-bg-event-image {
+    max-height: 40vh !important;
+    min-height: 40vh !important;
+    background-size:cover;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    // animation: backgroundShift 50s linear infinite;
+    // &.activeSlide {
+    //   animation: backgroundShift 50s linear infinite;
+    // }
+  }
+  &__event-text-container {
+    position: absolute;
+    text-align: left;
+    border-radius: 8px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    bottom: 2.3rem;
+    width: 80vw;
+    margin: 0 auto;
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+  }
+  &__event-name {
+    font-family: "Comfortaa";
+    color: #FFF;
+    text-shadow: 1px 1px 2px black;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    margin-top: 0px;
+    font-weight: 700;
+  }
+  &__event-address {
+    font-family: "Round-Light";
+    color: #FFF;
+    font-size: 1.8rem;
+    margin-top: 0;
+  }
+  &__buttons-container {
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-around;
+  }
+  &__action-button {
+    // border: 1px solid map-get($colors, primary);
+    color: #FFF;
+    flex-basis: 50%;
+    background-color: RGBA(110, 211, 255, 0.8);
+  }
+
+  @-webkit-keyframes backgroundShift {
+    from { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+  }
+
+  @keyframes backgroundShift {
+    from { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+  }
+}
+
+.event-tag {
+  border-radius: 3px;
+  font-size: 1.2rem;
+  color: #FFF;
+  font-family: "Comfortaa", sans-serif;
+  padding: .2rem .4rem;
+  margin-right: .5rem;
+}
+
+.event-tag-0 {
+  background-color: #038974;
+}
+// free
+.event-tag-1 {
+  background-color: #2DB0E1;
+}
+// 0-3 years
+.event-tag-2 {
+  background-color: #07C997;
+}
+// booking required
+.event-tag-3 {
+  background-color: #EE3E73;
+}
+//booking recommended
+.event-tag-4 {
+  background-color: #E37699;
+}
+//pregnancy
+.event-tag-5 {
+  background-color: #3EB3B0;
+}
+//0-2 years
+.event-tag-6 {
+  // background-color: #05D8A1;
+  background-color: #6E25E9;
+}
+// 0-5 years
+.event-tag-7 {
+  background-color: #FF8B08;
+}
+// 0-9 years
+.event-tag-8 {
+  background-color: #05A078;
+}
+// all ages
+.event-tag-9 {
+  background-color: #06EDB1;
+}
+//3-5 years
+.event-tag-10 {
+  background-color: #059CDB;
+}
+
+//3-9 years
+.event-tag-11 {
+  background-color: #068EC6;
+}
+
+//3 years and above
+.event-tag-12 {
+  background-color: #D2079D;
+}
+
+//6-9 years
+.event-tag-13 {
+  background-color: #0681B4;
+}
+
+//6 years and above
+.event-tag-14 {
+  background-color: #EDBA06;
+}
+
+//10 years and above
+.event-tag-15 {
+  background-color: #D0A307;
+}
+
+.event-tag-16 {
+  background-color: #6E25E9;
+}
+
+// //charity
+.event-tag-17 {
+  background-color: #4DDFCC;
+}

@@ -1,0 +1,11 @@
+<ion-card [ngClass]="{read: reminder.state === 'read',archived: reminder.state == 'archived'}">
+
+  <!-- <ion-card-header >
+
+  </ion-card-header> -->
+
+  <ion-card-content>
+    {{reminder.content.privateEvent.privateEventParticipations[reminder.content.privateEvent.privateEventParticipations.length - 1].friend.name }} joined {{reminder.content.privateEvent.name}}
+  </ion-card-content>
+
+</ion-card>

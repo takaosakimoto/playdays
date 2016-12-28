@@ -1,0 +1,69 @@
+<ion-navbar primary *navbar hideBackButton>
+  <ion-title>MY TRIAL CLASS</ion-title>
+</ion-navbar>
+
+<ion-content class="joined-trial-class-index-page">
+
+  <div [hidden]="sessions.length !== 0">
+    <center class="no-joinned-trial-class">
+      No Joinned Trail Class
+    </center>
+  </div>
+
+  <ion-list>
+    <ion-card
+      class="joined-trial-class-card"
+      *ngFor="let session of sessions"
+      (click)="goToShowTrialClassPage(session)"
+    >
+      <div class="joined-trial-class-main">
+        <div
+          class="joined-trial-class-thumb"
+          [style.background-image]="'url(' + session.timeSlot.trialClass.image + ')'"
+        >
+        </div>
+
+        <div class="joined-trial-class-list-info">
+          <ion-label class="joined-trial-class-list-name">
+            <span>{{session.timeSlot.trialClass.name}}</span>
+          </ion-label>
+
+          <ion-label class="joined-trial-class-list-info-item">
+            <ion-icon name="calendar" class="joined-trial-class-list-icon calendar"></ion-icon>
+            {{ dateFormat(session.timeSlot.date) }}
+          </ion-label>
+          <ion-label class="joined-trial-class-list-info-item">
+            <ion-icon name="time" class="joined-trial-class-list-icon time"></ion-icon>
+            {{ timeFormat(session.timeSlot.from, session.timeSlot.to) }}
+          </ion-label>
+          <ion-label class="joined-trial-class-list-info-item">
+            <ion-icon name="pin" class="joined-trial-class-list-icon pin" ></ion-icon>
+            {{ plainAddress(session.timeSlot.trialClass.locationAddress) }}
+          </ion-label>
+        </div>
+
+      </div>
+
+      <div class="joined-trial-class-list-divider"></div>
+
+      <div class="joined-trial-class-list-footer">
+
+        <div class="joined-trial-class-list-like-container">
+          <ion-icon name="heart" class="icon-number-of-like"></ion-icon>
+          <span class="number-of-like">24</span>
+        </div>
+        <div class="joined-trial-class-list-joined-container">
+          <ion-icon name="people" class="icon-number-of-joinned"></ion-icon>
+          <span class="number-of-joined">32</span>
+        </div>
+
+        <div class="joined-trial-class-list-status">
+          {{ capitalize(session.status) }}
+        </div>
+      </div>
+
+
+    </ion-card>
+  </ion-list>
+
+</ion-content>

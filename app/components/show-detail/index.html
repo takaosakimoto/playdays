@@ -1,0 +1,116 @@
+<div class="show-detail-page">
+  <div class="show-detail-content" [ngSwitch]="eventTabs">
+    <div class="show-detail-info">
+      <!-- <ion-row> -->
+        <!-- <ion-col width-70 [style.align-self]="'center'" [style.flex-basis]=
+        "'20%'">
+          <h6 class="show-detail-content-header">
+             {{model.item.name}}
+          </h6>
+        </ion-col> -->
+        <!-- <ion-col width-30> -->
+          <!-- <button
+            [style.height]="'100%'"
+            clear class="go-btn"
+            protected (protectedOnClick)="emitJoinOnClick($event)"
+          >Time Slots</button>
+        </ion-col> -->
+      <!-- </ion-row> -->
+      <ion-row class="show-detail-price-and-likes-container">
+        <h4 *ngIf="!!model.item.priceString && model.item.priceString != '$0'" class="show-detail header">
+          {{model.item.priceString}}
+        </h4>
+
+        <h4 *ngIf="model.item.priceString === '$0'" class="show-detail header">
+          Free
+        </h4>
+
+        <ion-col class="show-detail-icon-container" style="text-align: right;">
+          <ion-icon *ngIf="model.isLiked" name="customFillBlueLikesIcon" class="show-detail-icon customFillBlueLikesIcon" style="width: 3rem;" [style.margin-right]="0" (click)="emitOnClickLike($event)" tappable></ion-icon>
+          <ion-icon *ngIf="!model.isLiked" name="customBlueLikesIcon" class="show-detail-icon customBlueLikesIcon" style="width: 3rem;" [style.margin-right]="0" (click)="emitOnClickLike($event)" tappable></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="!!model.item.contactNumber" class="show-detail-info-row">
+        <ion-col class="show-detail-icon-container" [style.flex-grow]="0">
+          <ion-icon name="call" class="show-detail-icon call"></ion-icon>
+        </ion-col>
+        <ion-col class="show-detail-info-col">
+          <a href="tel:{{model.item.contactNumber.replace(' ', '')}}" class="show-detail-info-tel">{{model.item.contactNumber}}</a>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="show-detail-info-row">
+        <ion-col class="show-detail-icon-container" [style.flex-grow]="0">
+          <ion-icon name="pin" class="show-detail-icon pin"></ion-icon>
+        </ion-col>
+
+
+        <ion-col class="show-detail-info-col show-detail-location">
+          <a
+            target="_system"
+            [style.text-decoration]="'none'"
+            [innerHTML]="model.item.locationAddress"
+          ></a>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row *ngIf="!!model.item.websiteUrl" class="show-detail-info-row">
+        <ion-col class="show-detail-icon-container" [style.flex-grow]="0">
+          <ion-icon name="link" class="show-detail-icon link"></ion-icon>
+        </ion-col>
+        <ion-col class="show-detail-info-col show-detail-info-link">
+          <a
+            href="{{model.item.websiteUrl}}"
+            target="_blank"
+            [style.text-decoration]="'none'"
+          >Visit Website</a>
+        </ion-col>
+      </ion-row>
+
+    </div>
+
+    <div class="show-detail-divider"></div>
+
+    <!-- directory tags -->
+    <div
+      class="show-detail-info"
+      *ngIf="model.item.tags && model.item.tags.length > 0"
+    >
+      <ion-label class="directory-show-info-item">
+        <ion-icon name="pricetags" class="show-detail-icon pricetags">
+        </ion-icon>
+        <div *ngFor="let tag of model.item.tags" class="show-detail-info-tag">
+          <span class="show-detail-info-tag-{{tag.id % 20}}">{{tag.title}}</span>
+        </div>
+      </ion-label>
+    </div>
+    <!-- event tags -->
+    <div
+      class="show-detail-info"
+      *ngIf="model.item.eventTags && model.item.eventTags.length > 0"
+    >
+      <ion-label class="directory-show-info-item">
+        <ion-icon name="pricetags" class="show-detail-icon pricetags">
+        </ion-icon>
+        <div *ngFor="let eventTag of model.item.eventTags" class="show-detail-event-tag">
+          <span class="event-tag event-tag-{{eventTag.id % 17}}">{{eventTag.title}}</span>
+        </div>
+      </ion-label>
+    </div>
+    <div class="show-detail-description" [innerHTML]="model.item.description">
+    </div>
+    <div class="show-detail-divider" [style.margin-top]="1.5"></div>
+    <div class="show-detail-description">
+      <ion-row>
+        <h1 class="improve-title" [style.margin-top]="0">Help us make Playdays better!</h1>
+      </ion-row>
+      <div class="improve-playdays-container">
+        <a class="improve-links" href="mailto:ben@playdays.co">Run this Event / Venue? Contact Us</a>
+        <a class="improve-links" href="mailto:ben@playdays.co">Suggest changes to this Event / Venue</a>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<ion-navbar primary *navbar>
+  <ion-title>ABOUT</ion-title>
+</ion-navbar>
+
+<ion-content class="settings-index-page">
+  <button
+    *ngFor="let navItem of settingsNavItems"
+    (click)="goToNavItemPage(navItem.page)"
+    class="navItem"
+    [ngStyle]="{'background-image': navItem.bgImage}"
+  >
+    <center>{{ navItem.title }}</center>
+    <center class="settings-subtitle">{{ navItem.smallText }}</center>
+  </button>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-toolbar primary>
+  <ion-buttons start>
+    <button (click)="close()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title>NEW COMMENT</ion-title>
+</ion-toolbar>
+
+
+<ion-content class="comment-new-page">
+
+  <form id="comment-form" [ngFormModel]="commentForm" novalidate>
+    <ion-row>
+      <p class="comment-note">Please share your experiences at this location to help other parents and their children in the Playdays community!</p>
+    </ion-row>
+    <ion-card>
+      <ion-item>
+        <ion-textarea class="comment-textarea" [style.height]="'100px'" [ngFormControl]="textContentInput" type="text" placeholder="Comment" required>
+        </ion-textarea>
+        <p danger padding-left [hidden]="!textContentInput.touched || !textContentInput.errors"></p>
+      </ion-item>
+    </ion-card>
+
+    <ion-row>
+      <ion-col offset-10 width-80>
+        <button type="submit" round full secondary >
+          Create
+        </button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

@@ -1,0 +1,51 @@
+<div class="like-directories-page">
+  <ion-row class="like-row" *ngFor="let event of events">
+    <ion-col class="like-col">
+      <!-- <ion-row class="show-detail-info-row">
+        <ion-col class="show-detail-icon-container" [style.flex-grow]="0">
+          <ion-icon name="call" class="show-detail-icon call"></ion-icon>
+        </ion-col>
+        <ion-col class="show-detail-info-col">
+          <a href="tel:{{event.contactNumber.replace(' ', '')}}" class="show-detail-info-tel">{{event.contactNumber}}</a>
+        </ion-col>
+        <ion-col class="show-detail-icon-container" [style.flex-grow]="0">
+          <ion-icon name="link" class="show-detail-icon link"></ion-icon>
+        </ion-col>
+        <ion-col class="show-detail-info-col show-detail-info-link">
+          <a
+            href="{{event.websiteUrl}}"
+            target="_blank"
+            [style.text-decoration]="'none'"
+          >Visit Website</a>
+        </ion-col>
+      </ion-row> -->
+      <div class="show-detail-image" [ngStyle]="{'background-image': 'url('+event.image+')'}" (click)="gotoDetail(event)" tappable>
+        <ion-row>
+          <ion-col class="like-image-caption-container">
+            <h5 class="like_directory_title">{{event.name}}</h5>
+            <div class="show-detail-info" *ngIf="event.eventTags && event.eventTags.length > 0">
+              <ion-label class="directory-show-info-item" [style.margin-top]="0">
+                <div *ngFor="let eventTag of event.eventTags" class="show-detail-event-tag">
+                  <span class="event-tag event-tag-{{eventTag.id % 20}}">{{eventTag.title}}</span>
+                </div>
+              </ion-label>
+            </div>
+            <!-- <ion-row class="like-detail-info-row">
+              <ion-col class="show-detail-icon-container" [style.flex-grow]="0" [style.margin-right]="0">
+                <ion-icon name="pin" class="show-detail-icon pin"></ion-icon>
+              </ion-col>
+              <ion-col class="show-detail-info-col show-detail-location">
+                <a
+                  target="_system"
+                  [style.text-decoration]="'none'"
+                  [innerHTML]="event.locationAddress"
+                ></a>
+              </ion-col>
+            </ion-row> -->
+          </ion-col>
+        </ion-row>
+      </div>
+     <!--   -->
+    </ion-col>
+  </ion-row>
+</div>

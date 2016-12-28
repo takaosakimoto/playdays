@@ -1,0 +1,34 @@
+.my-likes-page-content {
+  background-color: #FFF;
+  height: 100%;
+  padding: 0 1.5rem;
+}
+
+.my-likes-icon {
+  height: 50px;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+}
+
+.my-likes-page-header {
+  font-family: "Comfortaa";
+}
+
+.my-likes-page-content {
+  font-family: "Comfortaa";
+}
+
+.my-likes-page-body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.coming-soon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+.toggle-btn-container{
+  margin: 0px !important;
+}

@@ -1,0 +1,9 @@
+.public-event-show-page {
+  ion-content {
+    background-color: #FFFFFF;
+  }
+
+  ion-content.public-event-show-page.statusbar-padding {
+    height: 85% !important;
+  }
+}

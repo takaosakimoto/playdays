@@ -1,0 +1,87 @@
+<ion-navbar primary *navbar class="profile-page-navbar">
+  <ion-title>PROFILE</ion-title>
+</ion-navbar>
+
+<ion-content class="profile-page">
+
+  <div class="profile-page-content-container">
+
+    <div class="">
+      <!-- <img class="profile-page-profile-image" [hidden]="!me.fbUserPictureUrl" [src]="me.fbUserPictureUrl"/> -->
+      <center>
+        <ion-label class="user-picture" [ngStyle]="{'background-color': back_C}">
+         {{_firstN}}{{_lastN}}
+        </ion-label>
+      </center>
+    </div>
+
+    <div class="profile-page-text-content">
+      <div class="profile-page-profile-edit">
+        <div class="profile-page-user-name">{{ me.fname }} {{ me.lname }}</div>
+
+        <button
+          clear
+          class="profile-page-edit-btn"
+          (click)="gotoEditPage()"
+        >
+          <ion-icon name="md-create" style="padding: 0;color: #96A6B5;"></ion-icon>
+        </button>
+      </div>
+
+      <!-- <ion-label tappable (click)="gotoFriendIndex()">
+        <ion-icon name="people" style="color: #659540;" class="equal-width-icon"></ion-icon>
+        <span>You got {{ me.friendsCount }} friends</span>
+      </ion-label> -->
+
+      <ion-label>
+        <ion-icon name="ios-happy-outline" style="color: #903283;" class="equal-width-icon"></ion-icon>
+        <span>You have {{ me.children ? me.children.length : '' }} kids</span>
+      </ion-label>
+
+
+      <div class="divider"></div>
+      <ion-row class="profile-info-row">
+        <ion-col class="profile-info-col-l">Live in</ion-col>
+        <ion-col class="profile-info-col-r">{{ me.liveIn }}</ion-col>
+      </ion-row>
+
+
+      <div class="divider"></div>
+      <ion-row class="profile-info-row">
+        <ion-col class="profile-info-col-l">Children</ion-col>
+        <ion-col class="profile-info-col-r">
+          <ion-row *ngFor="let age of me.childrenAge; let i = index">
+            {{ i | ordinalInWord }} kid - {{ age }}
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+
+      <div class="divider"></div>
+      <ion-row class="profile-info-row">
+        <ion-col class="profile-info-col-l">Language</ion-col>
+        <ion-col class="profile-info-col-r">{{ me.languagesString }}</ion-col>
+      </ion-row>
+
+
+      <div class="divider"></div>
+      <ion-row class="profile-info-row">
+        <ion-col class="profile-info-col-l">About Me</ion-col>
+        <ion-col class="profile-info-col-r">{{ me.aboutMe }}</ion-col>
+      </ion-row>
+
+
+
+    </div>
+
+  </div>
+
+  <div class="profile-footer">
+    <button (click)="logout()" round class="profile-logout-button">
+      LOGOUT
+    </button>
+  </div>
+
+
+
+</ion-content>

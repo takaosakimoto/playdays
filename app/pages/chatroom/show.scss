@@ -1,0 +1,66 @@
+ion-content.chatroom-show-page {
+  border: none;
+  ion-card {
+    min-height: 6rem;
+    max-width: 80%;
+
+    // padding: 1 10px;
+    margin: 1rem;
+    background-color: transparent;
+    box-shadow: none;
+    ion-card-content {
+      width: 100%;
+      display: flex;
+      background-color: none;
+      span.message-text {
+        padding: 1rem 1.5rem;
+        border-radius: 5px;
+        height: 100%;
+        order: 2;
+        color: #39211D;
+      }
+    }
+  }
+}
+
+.chatroom-message-from {
+  background-color: $background-color;
+  display: flex;
+  // min-height: 3em;
+  align-content: center;
+  justify-content: center;
+}
+
+.chatroom-message-input {
+  border: none;
+  width: 100%;
+  margin: 0.3em;
+  padding: 0.5em;
+  min-height: 31px;
+  height: 2em;
+  resize: none;
+  overflow: hidden;
+}
+
+.chatroom-show-page-img {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 3rem;
+  min-width: 6rem;
+}
+
+.left.chatroom-show-page-img {
+  margin-right: 1rem;
+  order: 1;
+}
+
+.right.chatroom-show-page-img {
+  margin-left: 1rem;
+  order: 2;
+}
+
+.chatroom-show-page-ion-card-content {
+  padding-left: 0px;
+  padding-right: 0px;
+  align-items: center;
+}

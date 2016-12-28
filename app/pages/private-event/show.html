@@ -1,0 +1,45 @@
+<ion-navbar primary *navbar>
+  <ion-title>{{privateEvent.name}}</ion-title>
+</ion-navbar>
+
+<ion-content class="private-event-show-page">
+  <place-item
+    [place]="privateEvent.place">
+  </place-item>
+  <ion-card >
+
+    <ion-card-content>
+      <ion-list>
+
+        <ion-item>
+          {{privateEvent.name}}
+        </ion-item>
+
+        <ion-item>
+          {{ dateFormat(privateEvent.date) }}
+        </ion-item>
+
+        <ion-item>
+          {{ timeFormate(privateEvent.from)}}
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card *ngIf="privateEvent.privateEventParticipations.length > 0">
+    <ion-card-header>
+      People who will also join
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let privateEventParticipation of privateEvent.privateEventParticipations">
+          {{privateEventParticipation.friend.name}}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

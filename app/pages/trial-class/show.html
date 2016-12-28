@@ -1,0 +1,18 @@
+<ion-navbar primary *navbar>
+  <ion-title>TRIAL CLASS DETAILS</ion-title>
+</ion-navbar>
+
+<ion-content class="trial-class-show-page">
+
+  <show-detail
+    [model]="trialClassItem"
+    (joinOnClick)="goToJoinTrialClass($event)"
+  ></show-detail>
+
+  <comment-list
+    [comments]="comments"
+    (onAddComment)="handleOpenCommentModalButtonClicked()"
+    (onCommentAvatarClick)="gotoUserProfile($event)"
+  ></comment-list>
+
+</ion-content>

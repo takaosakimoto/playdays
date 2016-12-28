@@ -1,0 +1,60 @@
+<ion-navbar primary *navbar>
+  <ion-title>COMING SOON</ion-title>
+</ion-navbar>
+
+<ion-content class="coming-soon-index-page">
+  <button
+    class="navItem"
+    [ngStyle]="{'background-image': 'url(img/about_us_bg.png)'}"
+  >
+    <center class="nav-item-group-btn-title">LANGUAGE</center>
+    <center class="nav-item-group-btn-subtitle">Bilingual</center>
+    <button class="coming-soon-vote-btn" (click)="votedLanguage()">Vote</button>
+  </button>
+
+  <button
+    class="navItem"
+    [ngStyle]="{'background-image': 'url(img/about_us_bg.png)'}"
+  >
+    <center class="nav-item-group-btn-title">CHAT SYSTEM</center>
+    <center class="nav-item-group-btn-subtitle">Chat and stay organized with Playdays</center>
+    <button class="coming-soon-vote-btn" (click)="votedChatSystem()">Vote</button>
+  </button>
+
+
+  <button
+    class="navItem"
+    [ngStyle]="{'background-image': 'url(img/about_us_bg.png)'}"
+  >
+    <center class="nav-item-group-btn-title">CREATE PRIVATE EVENTS</center>
+    <center class="nav-item-group-btn-subtitle">Create your own playdays</center>
+    <button class="coming-soon-vote-btn" (click)="votedPrivateEvents()">Vote</button>
+  </button>
+
+  <button
+    class="navItem"
+    [ngStyle]="{'background-image': 'url(img/about_us_bg.png)'}"
+  >
+    <center class="nav-item-group-btn-title">REMINDERS</center>
+    <center class="nav-item-group-btn-subtitle">Get reminded of upcoming events</center>
+    <button class="coming-soon-vote-btn" (click)="votedReminders()">Vote</button>
+  </button>
+
+  <button
+    class="navItem"
+    [ngStyle]="{'background-image': 'url(img/about_us_bg.png)'}"
+  >
+    <center class="nav-item-group-btn-title">TRIAL CLASSES</center>
+    <center class="nav-item-group-btn-subtitle">See and join free trial classes</center>
+    <button class="coming-soon-vote-btn" (click)="votedTrialClasses()">Vote</button>
+  </button>
+
+  <button
+    class="navItem"
+    [ngStyle]="{'background-image': 'url(img/about_us_bg.png)'}"
+  >
+    <center class="nav-item-group-btn-title">MORE VISUALS</center>
+    <center class="nav-item-group-btn-subtitle">More pictures for Events &amp; Directory listings</center>
+    <button class="coming-soon-vote-btn" (click)="votedMoreVisuals()">Vote</button>
+  </button>
+</ion-content>

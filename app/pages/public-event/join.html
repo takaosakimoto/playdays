@@ -1,0 +1,14 @@
+<ion-navbar primary *navbar>
+  <ion-title>JOIN PUBLIC EVENT</ion-title>
+</ion-navbar>
+
+<ion-content class="public-event-join-page">
+
+  <time-slot-picker
+    [model]="publicEventItem"
+    [modelName]="'Section'"
+    (confirmOnClick)="joinPublicEvent($event)"
+    (shareOnClick)="sharePublicEvent()"
+  ></time-slot-picker>
+
+</ion-content>

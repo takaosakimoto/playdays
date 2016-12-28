@@ -1,0 +1,52 @@
+<ion-navbar primary *navbar>
+  <ion-title>CREATE PRIVATE EVENT</ion-title>
+</ion-navbar>
+
+<ion-content class="private-event-new-page">
+  <place-item
+    [place]="place">
+  </place-item>
+  <form id="private-event-form" [ngFormModel]="privateEventForm" novalidate>
+    <ion-card>
+      <ion-item>
+        <ion-label>
+          <img src="img/private-event-pin.png" class="private-event-new-page-icon"/>
+        </ion-label>
+        <ion-input [ngFormControl]="eventNameInput" type="text" placeholder="Event Name" required>
+        </ion-input>
+        <p danger padding-left [hidden]="!eventNameInput.touched || !eventNameInput.errors"></p>
+      </ion-item>
+      <ion-item>
+        <img src="img/private-event-time.png" class="private-event-new-page-icon"/>
+        <button round primary type="button" (click)="openDateTimePicker()" class="private-event-new-page-btn">
+            {{ dateFormat(datetimeInput.value) }}
+        </button>
+        <p danger padding-left [hidden]="!datetimeInput.touched || !datetimeInput.errors"></p>
+      </ion-item>
+    </ion-card>
+
+    <!-- <ion-row>
+      <ion-col>
+        <h1>Invite Friends</h1>
+      </ion-col>
+      <ion-col>
+        <p>(Optional)</p>
+      </ion-col>
+    </ion-row> -->
+    <ion-row>
+      <ion-col offset-10 width-80>
+        <button class="private-event-new-page-invite-btn" type="button" round full primary (click)="handleOpenInviteFriendsModalButtonClicked()">
+          INVITE FRIENDS
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="private-event-new-page-create-event-btn">
+      <ion-col offset-10 width-80>
+        <button class="private-event-new-page-invite-btn" type="submit" round full secondary [disabled]="!privateEventForm.valid || isLoading">
+          CREATE
+        </button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

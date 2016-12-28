@@ -1,0 +1,20 @@
+<ion-toolbar primary>
+  <ion-buttons>
+    <button (click)="hanldeCloseButtonClicked()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+  </ion-buttons>
+  <ion-title class="toobar-title">Location Filter</ion-title>
+  <ion-buttons end>
+    <button (click)="handleOkButtonClicked()">
+      Ok
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content class="directory-filter-region-page">
+  <region-district-checkbox-list
+    [regions]="regions"
+    [selectedDistrictIds]="selectedDistrictIds"
+    (change)="handleCheckboxChange($event)">
+  </region-district-checkbox-list>
+</ion-content>

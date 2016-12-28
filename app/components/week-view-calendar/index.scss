@@ -1,0 +1,77 @@
+.swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.98, 0.98, 1, 0.8) !important;
+}
+
+.week-view-calendar-day-container {
+  padding: 0 0.3em;
+}
+
+.week-view-calendar-day-button {
+  color: #3B3B3B;
+}
+
+.week-view-calendar-day-button:last-child,
+.week-view-calendar-day-button:first-child {
+  color: #B8B8B8
+}
+
+.week-view-calendar-day-text {
+  font-size: 1.4em;
+  margin: auto;
+}
+
+.week-view-calendar-day-char-container {
+  padding: 0 0.3em;
+}
+
+.week-view-calendar-day-char {
+  font-size: 0.7em;
+}
+
+.week-view-calendar-date-text {
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  color: #69D2FF;
+  margin: 0.7em 0;
+  font-size: 0.9em;
+  width: 100%;
+}
+
+.week-view-calendar-date-row {
+
+}
+
+.calendar-chevron {
+  width: 40%;
+  background-size: 10%;
+  background-repeat: no-repeat;
+  margin-top: 1.4rem;
+  // background-position-x: 50%;
+  // background-position-y: 50%;
+
+  &.left {
+    animation: shuffleL 1.5s linear infinite;
+  }
+  &.right {
+    animation: shuffleR 1.5s linear infinite;
+  }
+}
+
+@-webkit-keyframes shuffleL {
+  from { background-position: 10% 0%; }
+  100% { background-position: 20% 0%; }
+}
+
+@keyframes shuffleL {
+  from { background-position: 10% 0%; }
+  100% { background-position: 20% 0%; }
+}
+
+@-webkit-keyframes shuffleR {
+  from { background-position: 90% 0%; }
+  100% { background-position: 80% 0%; }
+}
+
+@keyframes shuffleR {
+  from { background-position: 90% 0%; }
+  100% { background-position: 80% 0%; }
+}

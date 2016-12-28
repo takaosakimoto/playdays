@@ -1,0 +1,38 @@
+.place-item-name {
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  margin-bottom: 1rem !important;
+}
+
+.place-card-container {
+  margin: 0 !important;
+
+  ion-label {
+    white-space: normal;
+  }
+}
+
+.place-card-thumbnail {
+  margin: 0 !important;
+  margin-right: 1rem !important;
+}
+
+.place-card-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.place-item-location {
+  display: flex;
+  flex-direction: row;
+}
+
+.place-item-icon {
+  color: #EF6942;
+  margin-right: 1.5rem;
+}
+
+.place-item-address {
+  p {
+
+  }
+}

@@ -1,0 +1,129 @@
+ion-content.directory-filter-page {
+  background-color: #D7E1E6;
+  div.district-filters-container {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin: 2rem auto;
+
+    div.district-filter-container {
+      font-family: "Open Sans", sans-serif;
+      display: flex;
+      background-color: white;
+      border-radius: 5px;
+      margin: 5px;
+
+      span.district-name {
+        padding-left: 10px;
+        margin: auto;
+      }
+    }
+  }
+
+}
+
+.district-filter-button {
+  border-radius: 30px;
+  color: #688390;
+  background-color: #FFFFFF;
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  margin: 2rem 0 -1rem 0;
+
+  span.button-inner {
+    display: flex;
+    flex-direction: row;
+
+    .district-filter-icon {
+      height: 20px;
+      width: 20px;
+      margin: 0 1rem;
+    }
+  }
+  &.activated {
+    color: #FFFFFF;
+  }
+}
+
+span.button-inner {
+  display: flex;
+  flex-direction: column;
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  justify-content: center;
+
+  img {
+    height: 35px;
+    width: 35px;
+  }
+  p {
+    margin-top: 0;
+    // margin-bottom: 0.1rem;
+    max-width: 90%;
+    white-space: normal;
+  }
+}
+
+.directory-filter-title {
+  background-color: #EAEAEA;
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  margin: 1.2em 0 0.4em 0;
+  padding: .5rem 0;
+  text-align: center;
+  color: #7C95A1
+}
+
+.directory-filter-subtitle {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  color: #678391;
+  width: 70%;
+	margin: 2rem auto;
+}
+
+.directory-filters-bg-image {
+  height: 60%;
+  width: 100%;
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+}
+
+.directory-filters-container {
+  width: 95%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.directory-filter-btn {
+  width: 7em;
+  height: 7em;
+  margin: 5px;
+  padding: 0px;
+  padding-top: 1rem;
+  border-radius: 5px;
+  font-size: 1.25rem;
+}
+
+.directory-filter-tag-btn {
+  border-radius: 20px;
+}
+
+div.directory-filters-icon {
+  // height: 4.5rem;
+  svg {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: .5rem;
+    // height: 100%;
+  }
+  &.selected {
+    svg {
+      path {
+        fill: #FFF;
+      }
+    }
+  }
+}

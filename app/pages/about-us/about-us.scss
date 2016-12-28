@@ -1,0 +1,41 @@
+.about-us-page {
+  // background-color: white;
+}
+
+ion-content.about-us-page.statusbar-padding {
+  background-color: #FFFFFF;
+}
+
+.about-us-page-content {
+  height: 90%;
+  .about-us-page-body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+    color: #69D2FF;
+    margin: 0 2.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    line-height: 3rem;
+
+    // &:before {
+    //   position: absolute;
+    //   font-size: 6em;
+    //   line-height: 1;
+    //   top: 16rem;
+    //   left: 1rem;
+    //   content: "\201C";
+    // }
+    // &:after {
+    //   position: absolute;
+    //   float:right;
+    //   font-size:6em;
+    //   line-height: 1;
+    //   right:1rem;
+    //   bottom:13rem;
+    //   content: "\201D";
+    // }
+  }
+}

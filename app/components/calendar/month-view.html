@@ -1,0 +1,25 @@
+<div
+  class="calendar-month"
+>
+  <!-- <ion-row class="calendar-month-header">
+    <ion-col
+      *ngFor="let day of ZERO2SIX"
+      [ngClass]="day===month.firstDay?'calendar-month-header-item':'calendar-month-header-hidden-item'"
+    >{{ month.name }}</ion-col>
+  </ion-row> -->
+  <ion-row class="calendar-row-container" *ngFor="let week of displayMonth">
+    <ion-col
+      *ngFor="let day of week"
+      class="calendar-day-button calendar-date-cell"
+      [ngClass]="{'calendar-disabled-cell': day.disabled, 'calendar-empty-cell': !day}"
+      (click)="emitDateClick(day)" tappable
+    >
+      <span
+        class="calendar-date"
+        [ngClass]="{'calendar-selected-date': day.isSelected, 'calendar-date-with-event': day.occupied === 'true', 'calendar-date-passed-event': day.occupied === 'passed'}"
+      >{{ day.date }}</span>
+    </ion-col>
+  </ion-row>
+
+
+</div>

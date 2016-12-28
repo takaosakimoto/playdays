@@ -1,0 +1,17 @@
+<ion-card [ngClass]="{read: reminder.state === 'read',archived: reminder.state == 'archived'}">
+
+  <ion-card-header>
+    {{reminder.content.privateEvent.host.name}} invited you go to a private event!
+  </ion-card-header>
+
+  <ion-card-content>
+      <button class="" type="button" [disabled]="reminder.content.state !=='pending'" round primary (click)="acceptButtonClicked$.next(reminder.content)">
+        I AM GOING
+      </button>
+
+      <button class="" type="button" round primary (click)="viewDetailsButtonClicked$.next(reminder.content.privateEvent)">
+        View Details
+      </button>
+  </ion-card-content>
+
+</ion-card>

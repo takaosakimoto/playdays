@@ -1,0 +1,27 @@
+<div class="calendar-header-container">
+
+  <button
+    clear
+    (click)="prevMonth()"
+    class="calendar-back-arrow"
+  >
+    <ion-icon name="ios-arrow-back"></ion-icon>
+  </button>
+  <span>{{ displayDateText }}</span>
+  <button
+    clear
+    (click)="nextMonth()"
+    class="calendar-forward-arrow"
+  >
+    <ion-icon name="ios-arrow-forward"></ion-icon>
+  </button>
+
+</div>
+
+<month-view-calendar
+  [(ngModel)]="selectedDate"
+  [calendarEvents]="calendarEvents"
+  [startFrom]="startFrom"
+  [startOfMonth]="thisMonth.getTime()"
+  (dateClick)="onDateClick($event)"
+></month-view-calendar>

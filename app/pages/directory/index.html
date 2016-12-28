@@ -1,0 +1,104 @@
+<ion-navbar primary *navbar>
+  <ion-title>DIRECTORY LISTING</ion-title>
+  <ion-buttons end>
+    <button (click)="handleFilterButtonClicked()" tappable>
+      Filter
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-toolbar [hidden]="!showSearchbar">
+  <ion-searchbar
+    [placeholder]="'Search'"
+    [debounce]="1000"
+    [hideCancelButton]="shouldHideSearchbarCancelButton"
+    [cancelButtonText]="Cancel"
+    (ionInput)="searchInput$.next($event.target.value)">
+  </ion-searchbar>
+</ion-toolbar>
+
+<ion-content class="directory-index-page">
+  <div>
+    <section class="selected-filters-container" *ngIf="selectedFilters.District.length > 0">
+      <div
+        *ngFor="let selectedDistrictFilter of selectedFilters.District"
+        [style.background-color]="focusedFilters.District.indexOf(selectedDistrictFilter.id) === -1? 'white' : '#6ED3FF'"
+        [ngClass]="{'selectedFilter': focusedFilters.District.indexOf(selectedDistrictFilter.id) != -1}"
+        class="selected-filter">
+        <button clear small class="filter-select-button"
+          (click)="handleFocusFilterButtonClicked('district', selectedDistrictFilter.id)">
+          <span
+            [style.color]="focusedFilters.District.indexOf(selectedDistrictFilter.id) === -1 ? '#7C95A1' : 'white'">
+            {{selectedDistrictFilter.name}}
+          </span>
+        </button>
+        <button clear small class="filter-close-button"
+          (click)="handleRemoveDistrictFilterButtonClicked(selectedDistrictFilter.id)">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </div>
+    </section>
+
+    <section class="selected-filters-container" *ngIf="selectedFilters.Category.length > 0">
+      <div
+        *ngFor="let selectedCategoryFilter of selectedFilters.Category"
+        [style.background-color]="focusedFilters.Category.indexOf(selectedCategoryFilter.id) === -1? 'white' : '#6ED3FF'"
+        [ngClass]="{'selectedFilter': focusedFilters.Category.indexOf(selectedCategoryFilter.id) != -1}"
+        class="selected-filter">
+        <button clear small class="filter-select-button"
+          (click)="handleFocusFilterButtonClicked('category', selectedCategoryFilter.id)">
+          <span
+            class="selected-filters-tag-color"
+            [style.background-color]="selectedCategoryFilter.hexColorCode">
+          </span>
+          <span
+            [style.color]="focusedFilters.Category.indexOf(selectedCategoryFilter.id) === -1 ? '#7C95A1' : 'white'">
+            {{selectedCategoryFilter.title}}
+          </span>
+        </button>
+        <button clear small class="filter-close-button"
+          (click)="handleRemoveCategoryFilterButtonClicked(selectedCategoryFilter.id)">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </div>
+    </section>
+
+    <section class="selected-filters-container" *ngIf="selectedFilters.Tag.length > 0">
+      <div
+        *ngFor="let selectedTagFilter of selectedFilters.Tag"
+        [style.background-color]="focusedFilters.Tag.indexOf(selectedTagFilter.id) === -1? 'white' : '#6ED3FF'"
+        [ngClass]="{'selectedFilter': focusedFilters.Tag.indexOf(selectedTagFilter.id) != -1}"
+        class="selected-filter">
+        <button clear small class="filter-select-button"
+          (click)="handleFocusFilterButtonClicked('tag', selectedTagFilter.id)">
+          <span
+            [style.color]="focusedFilters.Tag.indexOf(selectedTagFilter.id) === -1 ? '#7C95A1' : 'white'">
+            {{selectedTagFilter.title}}
+          </span>
+        </button>
+        <button clear small class="filter-close-button"
+          (click)="handleRemoveTagFilterButtonClicked(selectedTagFilter.id)">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </div>
+    </section>
+
+    <!-- cannot render, some what related to https://github.com/driftyco/ionic/issues/6632 may be -->
+    <!-- {{ filteredPlaces.length }} -->
+    <!-- <wbr> -->
+    <ion-item-group
+      [hidden]="filteredPlaces.length === 0"
+    >
+      <!-- <ion-item-divider *virtualHeader="let header">
+        {{ parseHeaderString(header) }}
+      </ion-item-divider> -->
+      <button ion-item detail-none *ngFor="let place of filteredPlaces" (click)="goToDirectoryShowPage(place)" >
+        {{ place.name }}
+      </button>
+    </ion-item-group>
+
+    <div [hidden]="filteredPlaces.length !== 0" class="no-search-result">
+      No Search Result
+    </div>
+  </div>
+</ion-content>

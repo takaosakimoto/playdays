@@ -1,0 +1,164 @@
+.time-slot-picker-list {
+  position: relative;
+}
+
+.no-booking-message {
+  margin: 0 2rem 2rem 2rem;
+  width: 90%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.time-slot-picker.secondary-header {
+  // color: #9B9B9B;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.2rem;
+  font-size: 1.4em;
+  padding: 0.5em;
+  margin: 0;
+  height: 2.3em;
+  text-align: center;
+  width: 100%;
+  color: #494949;
+}
+
+.show-detail-icon {
+  margin-right: 1rem;
+}
+
+.booking-info-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.time-slot-picker.centered.secondary-header {
+  margin: 3em 0;
+  text-align: center;
+}
+
+.also-interested {
+  position: relative;
+  top: 4.2em;
+  height: 3.3em !important;
+  // transition: left 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.time-slot-picker-item {
+  background-color: #FFFFFF;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:nth-child(even) {
+    background-color: #D7E1E6;
+  }
+  // margin: 0 1rem;
+  // padding: 0.6em 0;
+  // height: 6em;
+  // position: absolute;
+  // top: 3.3em;
+  // transition: top 1s ease, left 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.time-slot-picker-item:not(:last-child) {
+  border-bottom: 1px solid rgba(72,72,72,0.12);
+}
+
+.time-slot-picker-radio-button {
+  margin: 0 1.5em;
+}
+
+.time-slot-picker-item-info {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 3rem;
+}
+
+.time-slot-picker-item-label {
+  margin: 0.7em 0;
+  &--time {
+    margin: 0.7em 0;
+    text-align: right;
+  }
+}
+
+.join-time-slot-confirm-btn {
+  margin-right: 1.5em;
+  border-radius: 2em;
+  height: 2.5em;
+  font-weight: 500;
+  padding: 0 0.5em;
+  text-transform: none;
+  letter-spacing: 0.06em;
+  transition: opacity 0.2s ease;
+}
+
+.join-time-slot-confirm-btn.confirmed {
+  border: 0px solid #D7D7D7;
+  animation: flip-btn 400ms forwards;
+}
+
+.join-time-slot-confirm-btn.btn-confirmed {
+  background-color: #7ED321;
+}
+
+.join-time-slot-confirm-btn.btn-joined {
+  background-color: #61F2EF;
+}
+
+.join-time-slot-confirm-btn.btn-rejected {
+  background-color: #FF4795;
+}
+
+.join-time-slot-confirm-btn.btn-pending {
+  background-color: #64A5F8;
+}
+
+.join-time-slot-confirm-btn.btn-i_m_going {
+  background-color: white;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  border: 1px solid #D7D7D7;
+  color: #D7D7D7;
+}
+
+@keyframes flip-btn {
+  0%   {transform: rotateX(0deg);}
+  50%  {transform: rotateX(90deg);}
+  100% {transform: rotateX(0deg);}
+}
+
+.time-slot-location-icon.pin {
+  flex: 0;
+  text-align: center;
+  color: #EF6942;
+}
+
+.time-slot-info-item p {
+  white-space: normal;
+  font-size: 12px;
+  margin-top: -1.6em;
+  margin-left: 1.5em;
+  padding-bottom: 1.2em
+}
+
+.share-with-friends {
+  width: 100%;
+  // top: 11em;
+  // position: absolute;
+  // transition: left 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.share-with-friends-btn {
+  font-family: "Comfortaa", "Varela Round", sans-serif;
+  display: block;
+  margin: auto;
+}

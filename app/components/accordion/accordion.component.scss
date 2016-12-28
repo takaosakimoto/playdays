@@ -1,0 +1,71 @@
+div.panel.panel-default {
+  // background-color: #FFFFFF;
+}
+
+.panel-heading {
+  font-family: "Comfortaa", sans-serif;
+  border-bottom: 1px solid #D7E1E6;
+  padding: 1rem 0;
+
+  // &:nth-child(odd) {
+  //   background-color: #FFFFFF;
+  // }
+
+  h4.panel-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    a {
+      text-decoration: none;
+      margin: 0 2rem;
+    }
+  }
+}
+
+.accordion-indicator {
+  transition: all 0.5s ease-in;
+}
+
+ion-icon.accordion-indicator {
+  color: #69D2FF;
+}
+
+ion-icon.accordion-indicator.ion-ios-arrow-dropright.accordion-open {
+  transform: rotate(90deg);
+}
+
+.region-district-accordion-group {
+  div.panel.panel-default {
+    background-color: #678391;
+    &.panel-open {
+      .region-district-accordion-item {
+        transition: all 2s ease-in;
+        @for $i from 1 through 15 {
+          ion-item:nth-child(#{$i}) {
+           animation-delay: 0.25s * $i;
+           -webkit-animation: slide (#{0.25s * $i}) forwards;
+          //  -webkit-animation-delay: 0.5s;
+           animation: slide (#{0.25s * $i}) forwards;
+          }
+        }
+      }
+    }
+    .region-district-accordion-item {
+      font-family: "Open Sans", sans-serif;
+      ion-item {
+        left: -100%;
+        &:nth-child(even) {
+          background-color: #D7E1E6;
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}

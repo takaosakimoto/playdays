@@ -1,0 +1,58 @@
+<div [ngSwitch]="viewMode">
+  <calendar
+    *ngSwitchWhen="'month-view'"
+    [(ngModel)]="selectedDate"
+    [calendarEvents]="calendarEvents"
+    (dateClick)="onDateClick($event)"
+  ></calendar>
+  <!-- [startFrom]="calendarStartFrom" -->
+
+  <div *ngSwitchWhen="'week-view'">
+    <week-view-calendar [(ngModel)]="selectedDate"></week-view-calendar>
+    <div
+      *ngFor="let reminder of filteredEventReminders"
+      class="reminder-dashboard-card-item"
+      [ngClass]="{'archived-reminder-dashboard-card-item': !showArchived && (reminder.state === 'archived')}"
+    >
+      <div
+        class="reminder-dashboard-card"
+        [ngSwitch]="reminder.reminderType"
+      >
+        <accepted-friend-request-reminder-card
+          *ngSwitchWhen="'acceptedFriendRequestReminder'"
+          [reminder]="reminder"
+        ></accepted-friend-request-reminder-card>
+
+        <friend-request-reminder-card
+          *ngSwitchWhen="'friendRequestReminder'"
+          [reminder]="reminder"
+        ></friend-request-reminder-card>
+
+        <joined-public-event-reminder-card
+          *ngSwitchWhen="'joinedPublicEventReminder'"
+          [reminder]="reminder"
+        ></joined-public-event-reminder-card>
+
+        <joined-trial-class-reminder-card
+          *ngSwitchWhen="'joinedTrialClassReminder'"
+          [reminder]="reminder"
+        ></joined-trial-class-reminder-card>
+
+        <rejected-trial-class-reminder-card
+          *ngSwitchWhen="'rejectedTrialClassReminder'"
+          [reminder]="reminder"
+        ></rejected-trial-class-reminder-card>
+
+        <shared-public-event-reminder-card
+          *ngSwitchWhen="'sharedPublicEventReminder'"
+          [reminder]="reminder"
+        ></shared-public-event-reminder-card>
+
+      </div>
+      <p class="reminder-dashboard-card-time">
+        {{ reminder.createdAt | amCalendar }}
+      </p>
+    </div>
+
+  </div>
+</div>

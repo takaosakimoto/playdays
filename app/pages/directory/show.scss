@@ -1,0 +1,158 @@
+ion-content.directory-show-page {
+  background-color: #FFFFFF;
+}
+
+ion-content.directory-show-page.statusbar-padding {
+  height: 80%;
+}
+
+// .directory-show-page {
+//   background-color: #FFF !important;
+// }
+
+.directory-show-info .directory-show.header{
+  font-weight: bold;
+}
+.directory-image {
+  width: 100%;
+  height: auto;
+}
+
+.directory-show-content {
+  background-color: #FFF;
+  font-size: 1.1em;
+  font-weight: 200;
+}
+
+.directory-show.header {
+  color: #494949;
+  letter-spacing: 0.2rem;
+  font-weight: 200;
+}
+
+.directory-show-info,
+.directory-divider,
+.directory-description, {
+  width: 92%;
+  margin: auto;
+}
+
+
+.directory-show-info {
+  // padding-top: 0.6em;
+  position: relative;
+}
+
+// .directory-show-info-row {
+//   padding-left: 0;
+// }
+
+.directory-show-play {
+  position: absolute;
+  right: 0;
+  top: 1.8rem;
+  font-size: 1.2em;
+}
+
+.directory-icon.link{
+  color: #659540;
+}
+
+.directory-icon.call {
+  color: #546FB4;
+}
+
+.directory-icon.pin{
+  color: #EF6942;
+}
+
+.directory-icon {
+  flex: 0;
+  text-align: center;
+}
+
+.directory-description {
+  text-align: justify;
+  padding-bottom: 1.5rem;
+}
+
+.directory-divider {
+  height: 1px;
+  margin: 2.5rem auto;
+  box-shadow: inset 0 0 0px 1px RGBA(151, 151, 151, 0.46);
+}
+
+// .directory-icon-container{
+//   flex: 0;
+//   padding-left: 0;
+//   padding-right: 0;
+// }
+
+.directory-show-info-item p{
+  margin-top: -1.3em;
+  margin-left: 1em;
+  padding-bottom: 0.5em
+}
+
+.directory-show-info-item a{
+  text-decoration: none;
+}
+
+.directory-icon.pricetags {
+  color: #0FB3A6;
+  float: left;
+  padding-bottom: 1rem;
+}
+
+.directory-show-info-tag{
+  color: #688390;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 1.5rem;
+  float: left;
+  margin-bottom: 0.7rem;
+}
+
+.directory-show-info-tag-0{
+  color: #49B7E7;
+}
+
+.directory-show-info-tag-1{
+  color: #7ED321;
+}
+
+.directory-show-info-tag-2{
+  color: #0FB3A6;
+}
+
+.directory-show-info-tag-3{
+  color: #EF6E97;
+}
+
+.directory-show-info-tag-4{
+  color: #DE7DED;
+}
+
+.directory-show-info-tag-5{
+  color: #EF6942;
+}
+
+.directory-show-info-tag-6{
+  color: #546FB4;
+}
+
+.directory-show-info-tag-7{
+  color: #FAEFDA;
+}
+
+.directory-show-info-tag-8{
+  color: #F8B118;
+}
+
+.directory-show-info-tag-9{
+  color: #007AFF;
+}
+
+.directory-show-info-tel{
+  color: black;
+}

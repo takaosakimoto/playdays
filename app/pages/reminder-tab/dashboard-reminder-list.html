@@ -1,0 +1,69 @@
+<!-- <ion-list>
+  <ion-item-sliding *ngFor="let reminder of reminders">
+    <dashboard-card [reminder]="reminder"></dashboard-card>
+  </ion-item-sliding>
+</ion-list>
+ -->
+
+<!-- <dashboard-card *ngFor="let reminder of reminders" [reminder]="reminder"></dashboard-card> -->
+
+<ion-item>
+  <ion-label></ion-label>
+  <ion-toggle [(ngModel)]="showArchived" (ionChange)="onShowArchivedChange()"></ion-toggle>
+</ion-item>
+
+<div
+  *ngFor="let reminder of _reminders"
+  class="reminder-dashboard-card-item"
+  [ngClass]="{'archived-reminder-dashboard-card-item': !showArchived && (reminder.state === 'archived')}"
+>
+  <div
+    class="reminder-dashboard-card"
+    [ngSwitch]="reminder.reminderType"
+  >
+    <accepted-friend-request-reminder-card
+      *ngSwitchCase="'acceptedFriendRequestReminder'"
+      [reminder]="reminder">
+    </accepted-friend-request-reminder-card>
+
+    <friend-request-reminder-card
+      *ngSwitchCase="'friendRequestReminder'"
+      [reminder]="reminder">
+    </friend-request-reminder-card>
+
+    <joined-public-event-reminder-card
+      *ngSwitchCase="'joinedPublicEventReminder'"
+      [reminder]="reminder">
+    </joined-public-event-reminder-card>
+
+    <joined-trial-class-reminder-card
+      *ngSwitchCase="'joinedTrialClassReminder'"
+      [reminder]="reminder">
+    </joined-trial-class-reminder-card>
+
+    <rejected-trial-class-reminder-card
+      *ngSwitchCase="'rejectedTrialClassReminder'"
+      [reminder]="reminder">
+    </rejected-trial-class-reminder-card>
+
+    <private-event-invitation-reminder
+      *ngSwitchCase="'privateEventInvitationReminder'"
+      [reminder]="reminder"
+      (onClickViewDetailsButton)="handleViewPrivateEventInvitationButonClicked($event)">
+    </private-event-invitation-reminder>
+
+    <new-private-event-participation-reminder
+      *ngSwitchCase="'newPrivateEventParticipationReminder'"
+      [reminder]="reminder">
+    </new-private-event-participation-reminder>
+
+    <shared-public-event-reminder-card
+      *ngSwitchCase="'sharedPublicEventReminder'"
+      [reminder]="reminder"
+    ></shared-public-event-reminder-card>
+
+  </div>
+  <p class="reminder-dashboard-card-time">
+    {{ reminder.createdAt | amCalendar }}
+  </p>
+</div>
